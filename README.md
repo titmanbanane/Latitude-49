@@ -1,2 +1,8 @@
 # Latitude-49
-un jeu post-apocaliptique
+Les elites ont voulu reset la population ils ont crée un virus zombie et se sont en fermer dans des villes sous terre. La plupart des gens a la surfaces sont mort mais certain ont reussi a survive. Parmi eux un groupe s’est formé et se sont mis en guerres contre les elites en lancant diff assaut sur leur base. Les elites ont répliquer en créant différents système de defense et des armés de robots pour tuer tous les membres des rebelles cependant les robots ont finit par attaquer tous les être humains en vu et on tué la plupart des humains restant élite comprise. Il ne reste à présent que des zombies, des robots de rares bandits et les vestiges des événements passés.
+
+Jeu avec survie type Zomboid Ambiance tarkov / stalker gameplay tarkov et multi type Zomboid (solo / coop / multi t’as capté)
+
+Spawn à la surface. Premier danger zombie. Gameplay Zomboid, se looter, prendre des connaissances, survivre. Quand on se rappproche des passages pour aller dans les sous terrains piéges ( gaz, essain d’abeilles robot, plus de bandits, d’autres trucs que jsp encore) dans les sous terrain majoritairement robot sur les parties villes et bosses zombie dans des chemins bizarres, zombies plus développé en général dans les passage abandonné + pièges et robots dans les villes. Plus d’untel qui aide à la survie dans les villes et c’est à peu pres toutes les idée que j’ai pour l’instant.
+
+Le but c’est d’avoir des zones précise à passer type barrage avant Louise ville dans Zomboid qui donne objectif précis après objectif précis pour continuer dans le jeu mais que en même temps il y ait un côté procédural qui soit toujours là pour rendre les choses différentes et à la limite avoir un côté rimworld où il y a un narrateur qui est là pour ton mal et qui va s’assurer que si t’as était paisible pendant trop longtemps des trucs te tombes sur la gueule pour assurer un rythme
