@@ -20,3 +20,25 @@ J'imagine les sous terrain avec differentes grosse villes relié par des especes
 Les villes principalement serait pas forcement procedurales mais les chemains qui les relis oui ducoup trouver des intels serait super important
 
 Competence chiante a aquerir style zomboid. mort = reset de competence. Dans les labos ils pourrait y avoir des corps d'humain dans lesquel tu peux doublé ta psyché a la cbp et si tu meurt tu garde tes competences. Le procédé en soit serait simple mais demanderais de la tech late game du coup ca ferais une courbe interessante ou tout va plus vite en late game. D'un coté ca pourrait parer a la lassitude d'un autre coté ca pourrait rendre le late game trop facile donc a reflechir
+
+idée de chat gpt vrmt pas mal : 🧠 2. Le narrateur façon RimWorld → GIGA idée (à pousser fort)
+
+Mais faut le rendre visible et identifiable, sinon ça sera juste du random.
+
+💡 Ajoute un “chef d’orchestre invisible”
+
+Un système qui agit comme une entité :
+
+Te laisse tranquille → puis t’envoie :
+une horde
+une panne d’électricité
+une invasion de faction
+une contamination de zone
+
+Mais surtout :
+
+👉 Il apprend ton style de jeu
+
+tu joues furtif → plus de pièges
+tu joues bourrin → plus de zombies tanky
+tu campes → événements pour te forcer à bouger
