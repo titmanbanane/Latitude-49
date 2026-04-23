@@ -18,3 +18,5 @@ zombies a la surface assez basique meme a la fin ils evoluent juste en stat (rap
 J'imagine les sous terrain avec differentes grosse villes relié par des especes de canal d'egout labyrintique abandonné. Il y aurait des accées un peu partout a la surface comme des espece de plques d'egouts qui spawn aleatoirement sur la map et il faudrait des clé dur a trouver pour les ouvirir et des plus grosses entrées dans les villes. Les clés serait extremement rares mais ouvirir une sortie depuis l'interrieur consommerais pas d'usage.
 
 Les villes principalement serait pas forcement procedurales mais les chemains qui les relis oui ducoup trouver des intels serait super important
+
+Competence chiante a aquerir style zomboid. mort = reset de competence. Dans les labos ils pourrait y avoir des corps d'humain dans lesquel tu peux doublé ta psyché a la cbp et si tu meurt tu garde tes competences. Le procédé en soit serait simple mais demanderais de la tech late game du coup ca ferais une courbe interessante ou tout va plus vite en late game. D'un coté ca pourrait parer a la lassitude d'un autre coté ca pourrait rendre le late game trop facile donc a reflechir
