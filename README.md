@@ -15,4 +15,6 @@ Les bandits se decompose en faction qui sont toutes plus ou moins amicale mais q
 
 zombies a la surface assez basique meme a la fin ils evoluent juste en stat (rapidité, intelligence, degats...), zombies dans les sous terrains peuvent etre classique mais aussi speciaux : sprinteurs, aveugle mais s'explose la gueule sur toi si tu fais trop de bruit, gros tas...
 
-J'imagine les sous terrain avec differentes grosse villes relié par des especes de canal d'egout labyrintique abandonné
+J'imagine les sous terrain avec differentes grosse villes relié par des especes de canal d'egout labyrintique abandonné. Il y aurait des accées un peu partout a la surface comme des espece de plques d'egouts qui spawn aleatoirement sur la map et il faudrait des clé dur a trouver pour les ouvirir et des plus grosses entrées dans les villes. Les clés serait extremement rares mais a plus plusieurs usages et ouvirir une sortie depuis l'interrieur consommerais pas d'usage.
+
+Les villes principalement serait pas forcement procedurales mais les chemains qui les relis oui ducoup trouver des intels serait super important
