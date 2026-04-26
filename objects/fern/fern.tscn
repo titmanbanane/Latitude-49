@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl1ybmc2a6hyv"]
+
+[ext_resource type="ArrayMesh" uid="uid://oobudds1pcpw" path="res://meshes/fern.obj" id="1_b8jrm"]
+
+[node name="Fern" type="Node3D"]
+
+[node name="Fern" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_b8jrm")

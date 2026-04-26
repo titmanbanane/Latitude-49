@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dfremlhqayw51"]
+
+[ext_resource type="Texture2D" uid="uid://ch0x2xpdmh886" path="res://textures/black_hexagonal_tiles/tiles_0063_color_2k.jpg" id="1_2rsbf"]
+[ext_resource type="Texture2D" uid="uid://b288sv2cgrjd1" path="res://textures/black_hexagonal_tiles/tiles_0063_ambient_occlusion_2k.jpg" id="2_h0i3l"]
+[ext_resource type="Texture2D" uid="uid://qicqlo5qjtbo" path="res://textures/black_hexagonal_tiles/tiles_0063_height_2k.png" id="3_dkrkx"]
+[ext_resource type="Texture2D" uid="uid://ch0hdtdy784v" path="res://textures/black_hexagonal_tiles/tiles_0063_normal_opengl_2k.png" id="4_046m7"]
+[ext_resource type="Texture2D" uid="uid://bte86l0kujkd8" path="res://textures/black_hexagonal_tiles/tiles_0063_roughness_2k.jpg" id="5_8p8vy"]
+
+[resource]
+albedo_texture = ExtResource("1_2rsbf")
+albedo_texture_force_srgb = true
+metallic_specular = 0.25
+roughness_texture = ExtResource("5_8p8vy")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("4_046m7")
+ao_enabled = true
+ao_texture = ExtResource("2_h0i3l")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_dkrkx")
+uv1_scale = Vector3(10, 10, 10)

@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dac2wsvw8upas"]
+
+[ext_resource type="Texture2D" uid="uid://ctqt3svvhl6vy" path="res://textures/carpet/fabrics_0076_color_2k.jpg" id="1_oksy0"]
+[ext_resource type="Texture2D" uid="uid://4b6s4sj27okf" path="res://textures/carpet/fabrics_0076_ao_2k.jpg" id="2_4860j"]
+[ext_resource type="Texture2D" uid="uid://dlc73avwflke4" path="res://textures/carpet/fabrics_0076_height_2k.png" id="3_ic4yy"]
+[ext_resource type="Texture2D" uid="uid://csexlfpv8b74o" path="res://textures/carpet/fabrics_0076_normal_opengl_2k.png" id="4_0ehw1"]
+[ext_resource type="Texture2D" uid="uid://dy5125e2glui5" path="res://textures/carpet/fabrics_0076_roughness_2k.jpg" id="5_366mq"]
+
+[resource]
+albedo_color = Color(0.474797, 1.11302e-06, 3.60981e-07, 1)
+albedo_texture = ExtResource("1_oksy0")
+roughness_texture = ExtResource("5_366mq")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("4_0ehw1")
+ao_enabled = true
+ao_texture = ExtResource("2_4860j")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_ic4yy")
+uv1_triplanar = true

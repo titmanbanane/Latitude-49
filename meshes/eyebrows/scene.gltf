@@ -1,0 +1,333 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 16130,
+      "max": [
+        0.6153810024261475,
+        -0.680802047252655,
+        0.11282043159008026
+      ],
+      "min": [
+        -0.6160061955451965,
+        -1.024031162261963,
+        -0.06849110126495361
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 193560,
+      "componentType": 5126,
+      "count": 16130,
+      "max": [
+        0.9987951517105103,
+        0.9999281764030457,
+        0.9999388456344604
+      ],
+      "min": [
+        -0.9996092319488525,
+        -0.999972939491272,
+        -0.9983526468276978
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 16130,
+      "max": [
+        0.2549019753932953,
+        0.2549019753932953,
+        0.25882354378700256,
+        1.0
+      ],
+      "min": [
+        0.125490203499794,
+        0.125490203499794,
+        0.23137255012989044,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 36216,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 387120,
+      "componentType": 5126,
+      "count": 2376,
+      "max": [
+        0.6136766672134399,
+        -0.6805345416069031,
+        0.11374998837709427
+      ],
+      "min": [
+        -0.6144992113113403,
+        -1.0016201734542847,
+        -0.06799203157424927
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 415632,
+      "componentType": 5126,
+      "count": 2376,
+      "max": [
+        0.998570442199707,
+        0.9999123811721802,
+        0.9999224543571472
+      ],
+      "min": [
+        -0.9845175743103027,
+        -0.9997420907020569,
+        -0.9909999966621399
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 258080,
+      "componentType": 5126,
+      "count": 2376,
+      "max": [
+        0.2549019753932953,
+        0.2549019753932953,
+        0.25882354378700256,
+        1.0
+      ],
+      "min": [
+        0.125490203499794,
+        0.125490203499794,
+        0.23137255012989044,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 144864,
+      "componentType": 5125,
+      "count": 5256,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 444144,
+      "componentType": 5126,
+      "count": 16750,
+      "max": [
+        0.6116612553596497,
+        -0.6769306659698486,
+        0.10895790159702301
+      ],
+      "min": [
+        -0.6124313473701477,
+        -1.0047839879989624,
+        -0.06521081179380417
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 645144,
+      "componentType": 5126,
+      "count": 16750,
+      "max": [
+        0.9924306869506836,
+        0.9985471367835999,
+        0.9999403357505798
+      ],
+      "min": [
+        -0.9992988109588623,
+        -0.999976634979248,
+        -0.999993085861206
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 296096,
+      "componentType": 5126,
+      "count": 16750,
+      "max": [
+        0.2549019753932953,
+        0.2549019753932953,
+        0.25882354378700256,
+        1.0
+      ],
+      "min": [
+        0.125490203499794,
+        0.125490203499794,
+        0.23137255012989044,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 165888,
+      "componentType": 5125,
+      "count": 33930,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "kuroru (https://sketchfab.com/kuroru0)",
+      "license": "SKETCHFAB Standard (https://sketchfab.com/licenses)",
+      "source": "https://sketchfab.com/3d-models/eyebrows-7b5dc8473edf43fb8663bfb75748200c",
+      "title": "Eyebrows"
+    },
+    "generator": "Sketchfab-15.53.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 301608,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 846144,
+      "byteOffset": 301608,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 564096,
+      "byteOffset": 1147752,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1711848,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "material_0",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 2,
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 6,
+            "NORMAL": 5,
+            "POSITION": 4
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_2",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 10,
+            "NORMAL": 9,
+            "POSITION": 8
+          },
+          "indices": 11,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        3,
+        4
+      ],
+      "name": "Eyebrows.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_3"
+    },
+    {
+      "mesh": 2,
+      "name": "Object_4"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

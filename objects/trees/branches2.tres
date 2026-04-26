@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c6heov64s13ax"]
+
+[ext_resource type="Shader" uid="uid://dnxb3mstcid66" path="res://objects/folliage/folliage.tres" id="1_5bxrw"]
+[ext_resource type="Texture2D" uid="uid://b7lgcjo7ol78u" path="res://meshes/trees/treefoliagepack/textures/branch-2-02.png" id="1_yif0b"]
+[ext_resource type="Texture2D" uid="uid://f6f5emi44ey8" path="res://meshes/trees/treefoliagepack/textures/leaves2-2_Normal.png" id="2_lvynb"]
+
+[sub_resource type="Gradient" id="Gradient_ft618"]
+offsets = PackedFloat32Array(0, 0.0436893)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5bxrw"]
+gradient = SubResource("Gradient_ft618")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5bxrw")
+shader_parameter/angle = 0.05
+shader_parameter/invertbaseuvy = true
+shader_parameter/folliagetexture = ExtResource("1_yif0b")
+shader_parameter/albedoadd = Color(0.742058, 0.702954, 0.462354, 1)
+shader_parameter/normalmapactive = true
+shader_parameter/normalmap = ExtResource("2_lvynb")
+shader_parameter/normaldepth = 1.0
+shader_parameter/backlightcolor = Color(0.898039, 0.843137, 0.596078, 1)
+shader_parameter/alphacissorthreshold = SubResource("GradientTexture1D_5bxrw")

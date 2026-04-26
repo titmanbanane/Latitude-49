@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b8pgi2o75k5rw"]
+
+[ext_resource type="Shader" uid="uid://b4lqqwcsc243d" path="res://shaders/fishnet_shader.tres" id="1_bf400"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_bf400")
+shader_parameter/grow = 0.003
+shader_parameter/uv_scale = 4.345
+shader_parameter/albedo = Color(0.356863, 0, 0.803922, 1)

@@ -1,0 +1,539 @@
+[gd_scene load_steps=58 format=4 uid="uid://c1igr5rc14fw"]
+
+[ext_resource type="Texture2D" uid="uid://vrvchqw37p43" path="res://meshes/trees/treefoliagepack/textures/Grass_Clumps_C_3.png" id="1_p0xcj"]
+[ext_resource type="Texture2D" uid="uid://ds7vsl1ptnli2" path="res://meshes/trees/treefoliagepack/textures/Grass_Clumps_C_2.png" id="3_87voq"]
+[ext_resource type="Shader" uid="uid://bf22t18pled5f" path="res://shaders/gamegrass.tres" id="3_bjyqj"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_p0xcj"]
+parameter_name = "albedoadd"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_bjyqj"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_87voq"]
+parameter_name = "normalmap"
+texture_type = 2
+color_default = 1
+texture_filter = 3
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_mwbyl"]
+source = 5
+
+[sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_05bqh"]
+parameter_name = "normalmapactive"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeSwitch" id="VisualShaderNodeSwitch_vidso"]
+default_input_values = [0, false, 1, true, 2, false]
+op_type = 6
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_0nixu"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_ndggl"]
+parameter_name = "normaldepth"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_8drcq"]
+default_input_values = [0, 0.0, 1, 0.0, 2, 0.0, 3, 0.0]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_sr80q"]
+parameter_name = "folliagetexture"
+texture_filter = 4
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_5twqc"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_grhko"]
+parameter_name = "alphacissorthreshold"
+
+[sub_resource type="Gradient" id="Gradient_uiwha"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y1vvs"]
+gradient = SubResource("Gradient_uiwha")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_rh3jy"]
+texture = SubResource("GradientTexture1D_y1vvs")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_dasqy"]
+source = 5
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_dmw4h"]
+parameter_name = "backlightcolor"
+default_value_enabled = true
+default_value = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_qd7s5"]
+offsets = PackedFloat32Array(0.242268, 0.376289)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8onle"]
+gradient = SubResource("Gradient_qd7s5")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_hgj0p"]
+source = 5
+texture = SubResource("GradientTexture1D_8onle")
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_yl2mk"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0.01, 0.01, 0.01)]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_rkcwk"]
+default_input_values = [0, 0.0, 1, 5.0]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_suwss"]
+default_input_values = [0, 0.0, 1, 1.0]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_qo3vd"]
+parameter_name = "windspeed"
+qualifier = 1
+default_value_enabled = true
+default_value = 20.0
+
+[sub_resource type="VisualShaderNodeVectorFunc" id="VisualShaderNodeVectorFunc_j8ysf"]
+function = 32
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_cbkq6"]
+default_input_values = [0, 0.0, 1, 0.5]
+operator = 1
+
+[sub_resource type="VisualShaderNodeRemap" id="VisualShaderNodeRemap_fcjx1"]
+default_input_values = [1, -1.0, 2, 1.0, 3, -1.0, 4, 1.0]
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_wkswp"]
+parameter_name = "angle"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_vsuk8"]
+function = 19
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_d7p5d"]
+
+[sub_resource type="VisualShaderNodeRotationByAxis" id="VisualShaderNodeRotationByAxis_4qqln"]
+default_input_values = [0, Vector3(0, 0, 0), 1, 0.0, 2, Vector3(1, 0, 1)]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_0gw5d"]
+default_input_values = [0, 0.0, 1, 0.01]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_s3p5x"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_uydyf"]
+default_input_values = [0, Vector2(0, 0)]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_ihigl"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_vqoba"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_87voq"]
+
+[sub_resource type="VisualShaderNodeVec3Parameter" id="VisualShaderNodeVec3Parameter_p0xcj"]
+parameter_name = "pos"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wdtff"]
+input_name = "vertex"
+
+[sub_resource type="Gradient" id="Gradient_ljoc5"]
+colors = PackedColorArray(0.219501, 0.219501, 0.219501, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n8xo4"]
+noise_type = 2
+frequency = 0.0085
+fractal_octaves = 4
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_m8hsh"]
+width = 128
+height = 128
+depth = 128
+seamless = true
+seamless_blend_skirt = 0.25
+color_ramp = SubResource("Gradient_ljoc5")
+noise = SubResource("FastNoiseLite_n8xo4")
+
+[sub_resource type="VisualShaderNodeTexture3D" id="VisualShaderNodeTexture3D_vp0on"]
+output_port_for_preview = 0
+texture = SubResource("NoiseTexture3D_m8hsh")
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_fx0ux"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_1cdsd"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_64e08"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_0w11a"]
+input_name = "node_position_world"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_bg784"]
+
+[sub_resource type="VisualShader" id="VisualShader_oiqu2"]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_schlick_ggx;
+
+uniform vec3 pos;
+global uniform float windspeed = 20.0;
+uniform sampler3D tex3d_vtx_4;
+uniform float angle = 1.0;
+uniform sampler2D folliagetexture : filter_linear_mipmap, repeat_enable;
+uniform vec4 albedoadd : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D alphacissorthreshold;
+uniform vec4 backlightcolor : source_color = vec4(0.000000, 0.000000, 0.000000, 1.000000);
+uniform sampler2D tex_frg_22;
+
+
+
+void vertex() {
+// Input:3
+	vec3 n_out3p0 = VERTEX;
+
+
+// Vector3Parameter:28
+	vec3 n_out28p0 = pos;
+
+
+// VectorOp:24
+	vec3 n_out24p0 = n_out3p0 + n_out28p0;
+
+
+// Input:8
+	vec3 n_out8p0 = NODE_POSITION_WORLD;
+
+
+// VectorOp:27
+	vec3 n_out27p0 = n_out8p0 + n_out28p0;
+
+
+// VectorOp:9
+	vec3 n_out9p0 = n_out27p0 + n_out24p0;
+
+
+// Input:7
+	float n_out7p0 = TIME;
+
+
+// FloatParameter:13
+	float n_out13p0 = windspeed;
+
+
+// FloatOp:12
+	float n_out12p0 = n_out7p0 * n_out13p0;
+
+
+// VectorCompose:6
+	float n_in6p1 = 0.00000;
+	vec3 n_out6p0 = vec3(n_out12p0, n_in6p1, n_out12p0);
+
+
+// VectorOp:5
+	vec3 n_out5p0 = n_out9p0 + n_out6p0;
+
+
+// VectorOp:10
+	vec3 n_in10p1 = vec3(0.01000, 0.01000, 0.01000);
+	vec3 n_out10p0 = n_out5p0 * n_in10p1;
+
+
+// VectorFunc:14
+	vec3 n_out14p0 = vec3(1.0) - n_out10p0;
+
+
+	vec4 n_out4p0;
+// Texture3D:4
+	n_out4p0 = texture(tex3d_vtx_4, n_out14p0);
+
+
+// FloatOp:15
+	float n_in15p1 = 0.50000;
+	float n_out15p0 = n_out4p0.x - n_in15p1;
+
+
+// FloatOp:11
+	float n_in11p1 = 5.00000;
+	float n_out11p0 = n_out15p0 * n_in11p1;
+
+
+// FloatParameter:17
+	float n_out17p0 = angle;
+
+
+// FloatOp:20
+	float n_in20p1 = 0.01000;
+	float n_out20p0 = n_out13p0 * n_in20p1;
+
+
+// FloatOp:19
+	float n_out19p0 = n_out17p0 + n_out20p0;
+
+
+// FloatFunc:18
+	float n_out18p0 = -(n_out19p0);
+
+
+	float n_out16p0;
+// Remap:16
+	float n_in16p1 = -1.00000;
+	float n_in16p2 = 1.00000;
+	{
+		float __input_range = n_in16p2 - n_in16p1;
+		float __output_range = n_out19p0 - n_out18p0;
+		n_out16p0 = n_out18p0 + __output_range * ((n_out11p0 - n_in16p1) / __input_range);
+	}
+
+
+	vec3 n_out2p0;
+	mat4 n_out2p1;
+// RotationByAxis:2
+	vec3 n_in2p2 = vec3(1.00000, 0.00000, 1.00000);
+	{
+		float __angle = n_out16p0;
+		vec3 __axis = normalize(n_in2p2);
+		mat3 __rot_matrix = mat3(
+			vec3( cos(__angle)+__axis.x*__axis.x*(1.0 - cos(__angle)), __axis.x*__axis.y*(1.0-cos(__angle))-__axis.z*sin(__angle), __axis.x*__axis.z*(1.0-cos(__angle))+__axis.y*sin(__angle) ),
+			vec3( __axis.y*__axis.x*(1.0-cos(__angle))+__axis.z*sin(__angle), cos(__angle)+__axis.y*__axis.y*(1.0-cos(__angle)), __axis.y*__axis.z*(1.0-cos(__angle))-__axis.x*sin(__angle) ),
+			vec3( __axis.z*__axis.x*(1.0-cos(__angle))-__axis.y*sin(__angle), __axis.z*__axis.y*(1.0-cos(__angle))+__axis.x*sin(__angle), cos(__angle)+__axis.z*__axis.z*(1.0-cos(__angle)) )
+		);
+		n_out2p0 = n_out24p0 * __rot_matrix;
+	}
+
+
+// Input:21
+	vec2 n_out21p0 = UV;
+
+
+// VectorDecompose:22
+	float n_out22p0 = n_out21p0.x;
+	float n_out22p1 = n_out21p0.y;
+
+
+// Mix:23
+	vec3 n_out23p0 = mix(n_out2p0, n_out24p0, vec3(n_out22p1));
+
+
+// Output:0
+	VERTEX = n_out23p0;
+
+
+}
+
+void fragment() {
+	vec4 n_out3p0;
+// Texture2D:3
+	n_out3p0 = texture(folliagetexture, UV);
+
+
+// ColorParameter:11
+	vec4 n_out11p0 = albedoadd;
+
+
+// VectorOp:12
+	vec4 n_out12p0 = n_out3p0 * n_out11p0;
+
+
+	vec4 n_out9p0;
+// Texture2D:9
+	n_out9p0 = texture(alphacissorthreshold, UV);
+
+
+// ColorParameter:4
+	vec4 n_out4p0 = backlightcolor;
+
+
+// Texture2D:22
+	vec4 n_out22p0 = texture(tex_frg_22, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out12p0.xyz);
+	ALPHA = n_out9p0.x;
+	BACKLIGHT = vec3(n_out4p0.xyz);
+	ALPHA_SCISSOR_THRESHOLD = n_out22p0.x;
+
+
+}
+"
+modes/cull = 2
+nodes/vertex/0/position = Vector2(2320, 120)
+nodes/vertex/2/node = SubResource("VisualShaderNodeRotationByAxis_4qqln")
+nodes/vertex/2/position = Vector2(1300, 60)
+nodes/vertex/3/node = SubResource("VisualShaderNodeInput_wdtff")
+nodes/vertex/3/position = Vector2(-1120, -340)
+nodes/vertex/4/node = SubResource("VisualShaderNodeTexture3D_vp0on")
+nodes/vertex/4/position = Vector2(271.857, 240.429)
+nodes/vertex/5/node = SubResource("VisualShaderNodeVectorOp_fx0ux")
+nodes/vertex/5/position = Vector2(-108.143, 160.429)
+nodes/vertex/6/node = SubResource("VisualShaderNodeVectorCompose_1cdsd")
+nodes/vertex/6/position = Vector2(-308.143, 320.429)
+nodes/vertex/7/node = SubResource("VisualShaderNodeInput_64e08")
+nodes/vertex/7/position = Vector2(-808.143, 160.429)
+nodes/vertex/8/node = SubResource("VisualShaderNodeInput_0w11a")
+nodes/vertex/8/position = Vector2(-1120, -440)
+nodes/vertex/9/node = SubResource("VisualShaderNodeVectorOp_bg784")
+nodes/vertex/9/position = Vector2(331.857, -179.571)
+nodes/vertex/10/node = SubResource("VisualShaderNodeVectorOp_yl2mk")
+nodes/vertex/10/position = Vector2(-128.143, 340.429)
+nodes/vertex/11/node = SubResource("VisualShaderNodeFloatOp_rkcwk")
+nodes/vertex/11/position = Vector2(900, 80)
+nodes/vertex/12/node = SubResource("VisualShaderNodeFloatOp_suwss")
+nodes/vertex/12/position = Vector2(-548.143, 200.429)
+nodes/vertex/13/node = SubResource("VisualShaderNodeFloatParameter_qo3vd")
+nodes/vertex/13/position = Vector2(-920, 280)
+nodes/vertex/14/node = SubResource("VisualShaderNodeVectorFunc_j8ysf")
+nodes/vertex/14/position = Vector2(51.8571, 360.429)
+nodes/vertex/15/node = SubResource("VisualShaderNodeFloatOp_cbkq6")
+nodes/vertex/15/position = Vector2(620, 80)
+nodes/vertex/16/node = SubResource("VisualShaderNodeRemap_fcjx1")
+nodes/vertex/16/position = Vector2(1200, 260)
+nodes/vertex/17/node = SubResource("VisualShaderNodeFloatParameter_wkswp")
+nodes/vertex/17/position = Vector2(560, 320)
+nodes/vertex/18/node = SubResource("VisualShaderNodeFloatFunc_vsuk8")
+nodes/vertex/18/position = Vector2(940, 240)
+nodes/vertex/19/node = SubResource("VisualShaderNodeFloatOp_d7p5d")
+nodes/vertex/19/position = Vector2(900, 400)
+nodes/vertex/20/node = SubResource("VisualShaderNodeFloatOp_0gw5d")
+nodes/vertex/20/position = Vector2(600, 560)
+nodes/vertex/21/node = SubResource("VisualShaderNodeInput_s3p5x")
+nodes/vertex/21/position = Vector2(-1120, -540)
+nodes/vertex/22/node = SubResource("VisualShaderNodeVectorDecompose_uydyf")
+nodes/vertex/22/position = Vector2(-400, -480)
+nodes/vertex/23/node = SubResource("VisualShaderNodeMix_ihigl")
+nodes/vertex/23/position = Vector2(1680, 20)
+nodes/vertex/24/node = SubResource("VisualShaderNodeVectorOp_vqoba")
+nodes/vertex/24/position = Vector2(-540, -60)
+nodes/vertex/27/node = SubResource("VisualShaderNodeVectorOp_87voq")
+nodes/vertex/27/position = Vector2(-400, -300)
+nodes/vertex/28/node = SubResource("VisualShaderNodeVec3Parameter_p0xcj")
+nodes/vertex/28/position = Vector2(-1380, -80)
+nodes/vertex/connections = PackedInt32Array(6, 0, 5, 1, 9, 0, 5, 0, 5, 0, 10, 0, 7, 0, 12, 0, 13, 0, 12, 1, 10, 0, 14, 0, 12, 0, 6, 0, 12, 0, 6, 2, 14, 0, 4, 0, 4, 0, 15, 0, 15, 0, 11, 0, 18, 0, 16, 3, 11, 0, 16, 0, 16, 0, 2, 1, 17, 0, 19, 0, 20, 0, 19, 1, 13, 0, 20, 0, 19, 0, 16, 4, 19, 0, 18, 0, 22, 1, 23, 2, 23, 0, 0, 0, 3, 0, 24, 0, 24, 0, 9, 1, 2, 0, 23, 0, 24, 0, 23, 1, 24, 0, 2, 0, 8, 0, 27, 0, 27, 0, 9, 0, 21, 0, 22, 0, 28, 0, 27, 1, 28, 0, 24, 1)
+nodes/fragment/0/position = Vector2(640, 160)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_sr80q")
+nodes/fragment/2/position = Vector2(-780, -60)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_dasqy")
+nodes/fragment/3/position = Vector2(-440, 60)
+nodes/fragment/4/node = SubResource("VisualShaderNodeColorParameter_dmw4h")
+nodes/fragment/4/position = Vector2(-460, 280)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture_hgj0p")
+nodes/fragment/9/position = Vector2(180, 940)
+nodes/fragment/11/node = SubResource("VisualShaderNodeColorParameter_p0xcj")
+nodes/fragment/11/position = Vector2(-280, -180)
+nodes/fragment/12/node = SubResource("VisualShaderNodeVectorOp_bjyqj")
+nodes/fragment/12/position = Vector2(220, -60)
+nodes/fragment/13/node = SubResource("VisualShaderNodeTexture2DParameter_87voq")
+nodes/fragment/13/position = Vector2(-780, 500)
+nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_mwbyl")
+nodes/fragment/14/position = Vector2(-240, 500)
+nodes/fragment/15/node = SubResource("VisualShaderNodeBooleanParameter_05bqh")
+nodes/fragment/15/position = Vector2(-780, 320)
+nodes/fragment/16/node = SubResource("VisualShaderNodeSwitch_vidso")
+nodes/fragment/16/position = Vector2(340, 400)
+nodes/fragment/17/node = SubResource("VisualShaderNodeVectorOp_0nixu")
+nodes/fragment/17/position = Vector2(20, 480)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFloatParameter_ndggl")
+nodes/fragment/18/position = Vector2(-80, 780)
+nodes/fragment/19/node = SubResource("VisualShaderNodeVectorCompose_8drcq")
+nodes/fragment/19/position = Vector2(220, 680)
+nodes/fragment/20/node = SubResource("VisualShaderNodeInput_5twqc")
+nodes/fragment/20/position = Vector2(-381.095, 627.99)
+nodes/fragment/21/node = SubResource("VisualShaderNodeTexture2DParameter_grhko")
+nodes/fragment/21/position = Vector2(-160, 980)
+nodes/fragment/22/node = SubResource("VisualShaderNodeTexture_rh3jy")
+nodes/fragment/22/position = Vector2(420, 880)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 13, 0, 14, 2, 15, 0, 16, 0, 4, 0, 0, 18, 11, 0, 12, 1, 3, 0, 12, 0, 14, 0, 17, 0, 17, 0, 16, 1, 18, 0, 19, 0, 18, 0, 19, 1, 18, 0, 19, 2, 18, 0, 19, 3, 19, 0, 17, 1, 20, 0, 14, 0, 21, 0, 9, 2, 22, 0, 0, 19, 12, 0, 0, 0, 9, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjyqj"]
+render_priority = 0
+shader = SubResource("VisualShader_oiqu2")
+shader_parameter/pos = Vector3(-0.45, 0, -0.45)
+shader_parameter/angle = 0.4
+shader_parameter/folliagetexture = ExtResource("3_87voq")
+shader_parameter/albedoadd = Color(0.878431, 0.803922, 0.6, 1)
+shader_parameter/alphacissorthreshold = ExtResource("1_p0xcj")
+shader_parameter/backlightcolor = Color(0.388235, 0.427451, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_flgo4"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_bjyqj")
+shader = SubResource("VisualShader_oiqu2")
+shader_parameter/pos = Vector3(0.5, 0, 0.5)
+shader_parameter/angle = 0.4
+shader_parameter/folliagetexture = ExtResource("3_87voq")
+shader_parameter/albedoadd = Color(0.878431, 0.803922, 0.6, 1)
+shader_parameter/alphacissorthreshold = ExtResource("1_p0xcj")
+shader_parameter/backlightcolor = Color(0.388235, 0.427451, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1lp5p"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_flgo4")
+shader = ExtResource("3_bjyqj")
+shader_parameter/angle = 0.4
+shader_parameter/folliagetexture = ExtResource("3_87voq")
+shader_parameter/albedoadd = Color(0.878201, 0.805566, 0.600053, 1)
+shader_parameter/alphacissorthreshold = ExtResource("1_p0xcj")
+shader_parameter/backlightcolor = Color(0.38664, 0.426277, 3.85046e-07, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_550d6"]
+_surfaces = [{
+"aabb": AABB(-0.286602, -0.00851018, -0.277259, 0.569807, 0.248891, 0.577286),
+"format": 34359742465,
+"index_count": 240,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIABAAFAAYABwAFAAQACAAJAAoACwAJAAgADAANAA4ADwAMAA4AEAARABIAEwAQABIAFAAVABYAFwAUABYAGAAZABoAGwAZABgAHAAdAB4AHwAcAB4AIAAhACIAIwAgACIAJAAlACYAJwAkACYAKAApACoAKwAoACoALAAtAC4ALwAtACwAMAAxADIAMwAxADAANAA1ADYANwA0ADYAOAA5ADoAOwA5ADgAPAA9AD4APwA8AD4AQABBAEIAQwBBAEAARABFAEYARwBFAEQASABJAEoASwBJAEgATABNAE4ATwBMAE4AUABRAFIAUwBRAFAAVABVAFYAVwBUAFYAWABZAFoAWwBYAFoAXABdAF4AXwBdAFwAYABhAGIAYwBhAGAAZABlAGYAZwBkAGYAaABpAGoAawBpAGgAbABtAG4AbwBsAG4AcABxAHIAcwBwAHIAdAB1AHYAdwB0AHYAeAB5AHoAewB5AHgAfAB9AH4AfwB9AHwAgACBAIIAgwCAAIIAhACFAIYAhwCEAIYAiACJAIoAiwCIAIoAjACNAI4AjwCMAI4AkACRAJIAkwCRAJAAlACVAJYAlwCVAJQAmACZAJoAmwCYAJoAnACdAJ4AnwCcAJ4A"),
+"name": "Grass_C",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 160,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uwygc"]
+resource_name = "grasspack_Leaves_002"
+_surfaces = [{
+"aabb": AABB(-0.286602, -0.00851018, -0.277259, 0.569807, 0.248891, 0.577286),
+"attribute_data": PackedByteArray("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"),
+"format": 34359742519,
+"index_count": 240,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIABAAFAAYABwAFAAQACAAJAAoACwAJAAgADAANAA4ADwAMAA4AEAARABIAEwAQABIAFAAVABYAFwAUABYAGAAZABoAGwAZABgAHAAdAB4AHwAcAB4AIAAhACIAIwAgACIAJAAlACYAJwAkACYAKAApACoAKwAoACoALAAtAC4ALwAtACwAMAAxADIAMwAxADAANAA1ADYANwA0ADYAOAA5ADoAOwA5ADgAPAA9AD4APwA8AD4AQABBAEIAQwBBAEAARABFAEYARwBFAEQASABJAEoASwBJAEgATABNAE4ATwBMAE4AUABRAFIAUwBRAFAAVABVAFYAVwBUAFYAWABZAFoAWwBYAFoAXABdAF4AXwBdAFwAYABhAGIAYwBhAGAAZABlAGYAZwBkAGYAaABpAGoAawBpAGgAbABtAG4AbwBsAG4AcABxAHIAcwBwAHIAdAB1AHYAdwB0AHYAeAB5AHoAewB5AHgAfAB9AH4AfwB9AHwAgACBAIIAgwCAAIIAhACFAIYAhwCEAIYAiACJAIoAiwCIAIoAjACNAI4AjwCMAI4AkACRAJIAkwCRAJAAlACVAJYAlwCVAJQAmACZAJoAmwCYAJoAnACdAJ4AnwCcAJ4A"),
+"material": SubResource("ShaderMaterial_1lp5p"),
+"name": "Grass_C",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 160,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_550d6")
+metadata/extras = {
+"hops": {}
+}
+
+[node name="Grass_B_Low_Dense" type="MeshInstance3D"]
+visibility_range_end = 20.0
+visibility_range_end_margin = 0.1
+mesh = SubResource("ArrayMesh_uwygc")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_1lp5p")
+metadata/extras = {
+"ant_landscape": {},
+"hops": {},
+"kitops": {
+"insert_target": null,
+"main_object": null,
+"mirror_target": null,
+"reserved_target": null
+}
+}

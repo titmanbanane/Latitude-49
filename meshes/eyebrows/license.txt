@@ -1,0 +1,8 @@
+Model Information:
+* title:	Eyebrows
+* source:	https://sketchfab.com/3d-models/eyebrows-7b5dc8473edf43fb8663bfb75748200c
+* author:	kuroru (https://sketchfab.com/kuroru0)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

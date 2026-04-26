@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cmr0rsib2yxrj"]
+
+[ext_resource type="Shader" uid="uid://bg0oh32gd7dtx" path="res://shaders/lace_shader.tres" id="1_0ksde"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0ksde")
+shader_parameter/grow = 0.003
+shader_parameter/uv_scale = 2.795
+shader_parameter/albedo = Color(1, 1, 1, 1)

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://mr7jfr8jx58w"]
+
+[ext_resource type="Script" uid="uid://4xgygxvtogun" path="res://objects/modular_house/modular_house.gd" id="1_y6tu1"]
+
+[node name="modular_house" type="Node3D" unique_id=809445851 node_paths=PackedStringArray("floor", "wall", "cornerr", "roof")]
+script = ExtResource("1_y6tu1")
+floor = NodePath("floor")
+wall = NodePath("wall")
+cornerr = NodePath("corner")
+roof = NodePath("roof")
+dimentions = Vector3i(1, 1, 1)
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=954260963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25073242, 0)
+size = Vector3(1, 0.49853516, 1)
+
+[node name="roof" type="CSGBox3D" parent="." unique_id=1605071615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4428272, 0)
+size = Vector3(1, 0.11450195, 1)
+
+[node name="wall" type="CSGBox3D" parent="." unique_id=65990652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45220947, -0.46165222)
+size = Vector3(1, 1.904419, 0.07116699)
+
+[node name="corner" type="CSGBox3D" parent="." unique_id=921674056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48031616, 0.511261, -0.4782843)
+size = Vector3(0.13812256, 2.022522, 0.10443115)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2045502097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66014075, 2.185608)
+use_collision = true
+size = Vector3(10, 4.2572927, 14.371216)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D" unique_id=1325545785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50354004, 0.124996066, -0.338974)
+operation = 2
+use_collision = true
+size = Vector3(8.257568, 3.3525312, 13.066376)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D" unique_id=1592848902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3259277, 0.12597561, 5.23975)
+operation = 2
+use_collision = true
+size = Vector3(3.4824219, 3.3544903, 1.9089279)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1597750240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.311587, -0.060042977, 3.3735657)
+use_collision = true
+size = Vector3(0.19769287, 0.88033986, 16.747131)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=250448838]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.0213099, -0.060042977, 11.653492)
+use_collision = true
+size = Vector3(0.19769287, 0.88033986, 16.747131)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1286013401]
+transform = Transform3D(10.914678, 0, 0, 0, 10.914678, 0, 0, 0, 10.914678, -5.3765745, 2.646016, 9.603)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.5, 0.165, 1, 0)
+depth = 1.36

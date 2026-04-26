@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=4 uid="uid://dwif4kdc31uh6"]
+
+[ext_resource type="Texture2D" uid="uid://b3bi2xqfwfham" path="res://meshes/trees/treefoliagepack/textures/Grass_Clumps_B_Opacity.png" id="1_0to3v"]
+[ext_resource type="Texture2D" uid="uid://cl688pm5nlhh1" path="res://meshes/trees/treefoliagepack/textures/Grass_Clumps_B.png" id="3_ftd5v"]
+[ext_resource type="Shader" uid="uid://bf22t18pled5f" path="res://shaders/gamegrass.tres" id="3_yrp01"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_767ii"]
+render_priority = 0
+shader = ExtResource("3_yrp01")
+shader_parameter/angle = 0.2
+shader_parameter/folliagetexture = ExtResource("3_ftd5v")
+shader_parameter/albedoadd = Color(0.814133, 0.86, 0.7912, 1)
+shader_parameter/alphacissorthreshold = ExtResource("1_0to3v")
+shader_parameter/backlightcolor = Color(0.248943, 0.420029, 0.234854, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6vq2j"]
+_surfaces = [{
+"aabb": AABB(-0.164568, -0.0277824, -0.207768, 0.325307, 0.278278, 0.378103),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray("IAAAACEAIAADAAAAIQADACAAAAABACEAIQACAAMAAQACACEAIgAjAAQAIgAEAAcAIwAiAAcABAAjAAYAIwAHAAUABgAjAAUAJAAlAAgAJAAIAAsAJQAkAAsACAAlAAoAJQALAAkACgAlAAkAJgAMACcAJgAPAAwAJwAPACYADAANACcAJwAOAA8ADQAOACcAEgAQACgAEAARACgAKAATABIAKAARABMAFQApABQAFAApABcAKQAVABYAKQAWABcAGQAqABgAGAAqABsAKgAZABoAKgAaABsAHgAcACsAHAAdACsAKwAfAB4AKwAdAB8A"),
+"lods": [0.080522, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABQAEAAcACAAJAAoACQAIAAsADAANAA4ADgAPAAwAEAARABIAEgARABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHgAdAB8A")],
+"name": "Grass_A",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("AAA8idyJAAAMQOGqedYAABl5IyrnzQAAu0NmCCl6AAB8+n+5ks4AANphSBqBygAAA3uYu///AAAK26AYzIsAAMvMr6P2KgAA1cRhGoOiAAD//x6nhYwAAOmDAxjARQAAMopupwAAAAAeFc3S10YAAM8lMy6yigAAr6WMA9RPAABhXs3iOKAAAN186y3eugAADz1WvI08AADDS7oDx1sAAKNAj+onxAAADLtp6cCLAAAfwTgWto8AAMw9PRr9uQAAX8dG3bvAAAClicnejV0AAAuH2hcBWQAAa7XMGWfDAABWZ///EGgAAFFEkjJKjAAAGuyP0pNIAAD/wgAAZF0AAGQuMXJJiQAAWVEylEa/AABZz8eVbrIAAOZ9aKXb2wAA3K4ohpVMAAAY2q+UrYoAALaLqIu3NAAA6jgmt+laAAA6SZ2r/n8AAH96I76qtgAAKbcEtO2RAABfktK/IlUAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ca8y7"]
+resource_name = "grasspack_Leaves_012"
+_surfaces = [{
+"aabb": AABB(-0.164568, -0.0277824, -0.207768, 0.325307, 0.278278, 0.378103),
+"attribute_data": PackedByteArray("TJAFjP//TYD//0aL//9NgK//X////w3UDY7/////df5MkAWM//9NgK//X////636//9Gi///TYANjv/////r/0yQBYz//02Ar/9f////rfr//0aL//9NgA2O/////3L/TJAFjP//TYD//0aL//9NgK//X////26bDY7//////////0aL//9NgK//X////4ueTJAFjP//TYAyj7X///9G/f//Rov//02ATJAFjP//TYAyj7X///+F/a//X////636//9Gi///TYBMkAWM//9NgDKPtf///2/9r/9f////rfr//0aL//9NgK//X////+aDTJAFjP//TYAyj7X///+G/YumSLL//02A8+rOrf//TYCLpkiy//9NgPPqzq3//02Ai6ZIsv//TYDz6s6t//9NgIumSLL//02A8+rOrf//TYA7zsCn//9NgDvOwKf//02AO87Ap///TYA7zsCn//9NgA=="),
+"format": 34896613431,
+"index_count": 120,
+"index_data": PackedByteArray("IAAAACEAIAADAAAAIQADACAAAAABACEAIQACAAMAAQACACEAIgAjAAQAIgAEAAcAIwAiAAcABAAjAAYAIwAHAAUABgAjAAUAJAAlAAgAJAAIAAsAJQAkAAsACAAlAAoAJQALAAkACgAlAAkAJgAMACcAJgAPAAwAJwAPACYADAANACcAJwAOAA8ADQAOACcAEgAQACgAEAARACgAKAATABIAKAARABMAFQApABQAFAApABcAKQAVABYAKQAWABcAGQAqABgAGAAqABsAKgAZABoAKgAaABsAHgAcACsAHAAdACsAKwAfAB4AKwAdAB8A"),
+"lods": [0.080522, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABQAEAAcACAAJAAoACQAIAAsADAANAA4ADgAPAAwAEAARABIAEgARABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHgAdAB8A")],
+"material": SubResource("ShaderMaterial_767ii"),
+"name": "Grass_A",
+"primitive": 3,
+"uv_scale": Vector4(1.67102, 2.0098, 2, 0.31223),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("AAA8idyJYrAMQOGqedb4uBl5IyrnzVKvu0NmCCl6T6J8+n+5ks7PCdphSBqBytUCA3uYu///VQoK26AYzIt9BsvMr6P2KnYl1cRhGoOigwH//x6nhYw+J+mDAxjARYALMopupwAAWt8eFc3S10ZT6c8lMy6yihLvr6WMA9RPY95hXs3iOKDQpN186y3euiulDz1WvI08+cTDS7oDx1tTtaNAj+onxHUBDLtp6cCL7QEfwTgWto9ZAMw9PRr9uVEAX8dG3bvA/wKlicnejV2vAAuH2hcBWcADa7XMGWfDAgFWZ///EGgQ5FFEkjJKjDjkGuyP0pNIs/v/wgAAZF3j8mQuMXJJiT2rWVEylEa/pK5Zz8eVbrLQCOZ9aKXb25kA3K4ohpVM/xkY2q+UrYrREraLqIu3NF7k6jgmt+lajOo6SZ2r/n+UtX96I76qtjYAKbcEtO2R3gBfktK/IlUA9csj+c5cKs/RXJO4/ShI8/e2Ktr2o56kfMIp4O2jCUDxvxZBxSoFnq6WGKq+NQGNtwxLlvxiSZv7+o4q+e+in/ITn6f6T6Y38Jqb8/cHVZv2sYUiejgCCigACOMYVIX6f2QFuL9mAeFcIs4ghI0BB74IlWP0MpSi8BtxVBdVoZH0mzqe5NdGZ973G9nv+ZWUZQwNh7sxE7u6NajQ+XddbvrHnAT2iZXwf7oBFbQClFfy")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6vq2j")
+metadata/extras = {
+"hops": {}
+}
+
+[node name="Grass_Jumbled_Low_Dense" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_ca8y7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_767ii")
+metadata/extras = {
+"CAPObj": {
+"pack_script": {}
+},
+"DM": {},
+"ant_landscape": {},
+"hops": {},
+"kitops": {
+"insert_target": null,
+"main_object": null,
+"mirror_target": null,
+"reserved_target": null
+}
+}

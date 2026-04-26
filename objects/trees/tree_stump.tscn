@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkn513n1cmhkd"]
+
+[ext_resource type="Texture2D" uid="uid://c17fmf668df2p" path="res://meshes/trees/treestump/textures/tree_stump.jpeg" id="1_cfe4r"]
+[ext_resource type="Texture2D" uid="uid://172gxfrwfakm" path="res://meshes/trees/treestump/textures/tree_stump_Metallic.png" id="2_k0s26"]
+[ext_resource type="Texture2D" uid="uid://dt6as8b024pn5" path="res://meshes/trees/treestump/textures/tree_stump_Normal.png" id="3_aq5pr"]
+[ext_resource type="ArrayMesh" uid="uid://carjmce1ytf1v" path="res://meshes/trees/treestump/treestump.obj" id="4_whscl"]
+[ext_resource type="ArrayMesh" uid="uid://dokwd2tbphwuc" path="res://meshes/trees/treestump/treestumplod1.obj" id="5_k0s26"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a1ctu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3hh7"]
+albedo_color = Color(0.975326, 1, 0.8679, 1)
+albedo_texture = ExtResource("1_cfe4r")
+metallic = 0.5
+metallic_texture = ExtResource("2_k0s26")
+normal_enabled = true
+normal_texture = ExtResource("3_aq5pr")
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = SubResource("CompressedTexture2D_a1ctu")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k0s26"]
+points = PackedVector3Array(-0.832906, -0.703543, 0.172035, 0.738433, -0.672469, 0.313292, -0.188402, -0.529832, 1.0286, -0.467737, -0.532422, 0.937667, -0.849602, -0.503938, 0.635521, -1.02491, -0.398417, 0.625141, -0.985309, -0.566948, 0.200467, -1.06601, -0.522496, 0.0833541, -1.00329, -0.59349, -0.14884, -0.391535, -0.624132, -0.750651, 0.0143031, -0.688222, 0.00866377, 0.907961, -0.544938, 0.389562, 0.8598, -0.506743, 0.523147, 0.494845, -0.45258, 0.899081, 0.0324973, -0.488401, 1.04192, 0.196031, -0.538032, -0.775698, 0.902824, -0.494443, -0.406985, 0.919519, -0.498327, -0.267758, 0.0466245, -0.35418, 1.12767, -0.183693, -0.308648, 1.14075, -0.518253, -0.352238, 1.03447, -0.901188, -0.34339, 0.780615, -1.00992, -0.360006, 0.686293, -1.16939, -0.359574, 0.0323571, -0.982741, -0.352238, -0.493635, -0.572621, -0.416111, -1.00631, -0.509049, -0.613343, -0.65317, -0.438412, -0.47459, -0.957121, -0.232924, -0.297427, -1.16449, -0.0383532, -0.402085, -0.996836, 0.480717, -0.330011, -1.01714, 0.973032, -0.46078, 0.399716, 0.947988, -0.468332, 0.458385, 0.95762, -0.494227, 0.183769, 0.895332, -0.297643, 0.722848, 0.796441, -0.441143, 0.656281, 0.643395, -0.376406, 0.85869, 0.393599, -0.365617, 1.08231, 0.621776, -0.381801, -0.908155, 0.967681, -0.323969, -0.476485, 1.01713, -0.301959, -0.297319, 1.01242, -0.368853, -0.116572, 0.221075, -0.305843, 1.08705, 0.112552, 1.1585, 0.563313, -0.699125, -0.281459, 0.928642, -0.478868, 1.43968, -0.0572263, -0.44569, 1.50096, -0.1089, -0.93779, -0.163853, -0.446248, -0.892198, -0.156301, -0.536057, -0.596381, -0.226864, -0.941551, -0.49963, -0.279517, -1.01918, -0.347013, -0.281674, -1.10944, -0.0940061, -0.185432, -1.09748, 0.118117, -0.201617, -1.07987, 0.298561, -0.182195, -1.02798, 0.480289, 0.213778, -0.673253, 0.528022, -0.240674, -0.918535, 1.00878, -0.324401, 0.238376, 0.851238, -0.161264, 0.645901, 0.837967, -0.151769, 0.668918, 0.167991, 1.21073, 0.501259, 0.58603, -0.275848, 0.95053, 0.979881, -0.302606, 0.34714, 0.63676, -0.214348, -0.783596, 0.664372, 0.0571151, -0.527257, 0.267524, 1.03421, 0.310359, 0.813137, 0.117105, 0.0291979, -0.756918, 0.188531, -0.541021, 0.292996, 1.02364, 0.422733)
+
+[node name="tree_stump" type="Node3D"]
+
+[node name="Treestump" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_c3hh7")
+visibility_range_end = 12.0
+visibility_range_end_margin = 1.0
+mesh = ExtResource("4_whscl")
+
+[node name="Treestumplod1" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_c3hh7")
+visibility_range_begin = 12.0
+visibility_range_begin_margin = 1.0
+visibility_range_end = 100.0
+visibility_range_end_margin = 1.0
+mesh = ExtResource("5_k0s26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Treestumplod1"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Treestumplod1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_k0s26")

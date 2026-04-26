@@ -1,0 +1,35 @@
+[gd_resource type="Environment" format=3 uid="uid://bwaue3wb2facf"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_a513w"]
+rayleigh_coefficient = 2.5
+rayleigh_color = Color(0.204299, 0.381104, 0.808527, 1)
+ground_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_uk0m2"]
+sky_material = SubResource("PhysicalSkyMaterial_a513w")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_uk0m2")
+ambient_light_source = 3
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 0.1
+fog_mode = 1
+fog_light_color = Color(0.417484, 0.579108, 0.639174, 1)
+fog_density = 0.0004
+fog_aerial_perspective = 0.7
+fog_sky_affect = 0.0
+fog_height = 179.69
+fog_height_density = 0.0009
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0004
+volumetric_fog_emission = Color(0.74397343, 0.84015185, 0.88788205, 1)
+volumetric_fog_length = 1024.0
+volumetric_fog_ambient_inject = 1.0
+adjustment_enabled = true
+adjustment_contrast = 1.055
+adjustment_saturation = 0.87

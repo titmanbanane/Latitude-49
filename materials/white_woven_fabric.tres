@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bqt2j6m5pbvuv"]
+
+[ext_resource type="Texture2D" uid="uid://doba6c1jk0odm" path="res://textures/white_woven_fabric/fabrics_0079_color_2k.jpg" id="1_640xv"]
+[ext_resource type="Texture2D" uid="uid://b7dc065oj4jhv" path="res://textures/white_woven_fabric/fabrics_0079_ao_2k.jpg" id="2_15d5d"]
+[ext_resource type="Texture2D" uid="uid://37f01emayjnf" path="res://textures/white_woven_fabric/fabrics_0079_height_2k.png" id="3_pn15s"]
+[ext_resource type="Texture2D" uid="uid://d1digpm71jh6y" path="res://textures/white_woven_fabric/fabrics_0079_normal_opengl_2k.png" id="4_pt2u5"]
+[ext_resource type="Texture2D" uid="uid://c7raqgioay6a5" path="res://textures/white_woven_fabric/fabrics_0079_roughness_2k.jpg" id="5_wt77c"]
+
+[resource]
+albedo_texture = ExtResource("1_640xv")
+roughness_texture = ExtResource("5_wt77c")
+normal_enabled = true
+normal_texture = ExtResource("4_pt2u5")
+ao_enabled = true
+ao_texture = ExtResource("2_15d5d")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_pn15s")
+uv1_triplanar = true

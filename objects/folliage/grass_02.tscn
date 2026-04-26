@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=4 uid="uid://bi6hb1c4wsnjr"]
+
+[ext_resource type="Shader" uid="uid://dnxb3mstcid66" path="res://objects/folliage/folliage.tres" id="1_20wwc"]
+[ext_resource type="Texture2D" uid="uid://db7rksm4crl34" path="res://meshes/trees/treefoliagepack/textures/grass-01.png" id="2_4ifp7"]
+[ext_resource type="Texture2D" uid="uid://dj48ymauckh07" path="res://meshes/trees/treefoliagepack/textures/grass-02.png" id="3_4ifp7"]
+[ext_resource type="Texture2D" uid="uid://br7t7goalrbs6" path="res://meshes/trees/treefoliagepack/textures/grass_medium_01_alpha_1k.png" id="4_e602h"]
+[ext_resource type="Texture2D" uid="uid://bi3si73sif2s5" path="res://meshes/trees/treefoliagepack/textures/grass_medium_01_diff_1k.jpg" id="5_320au"]
+
+[sub_resource type="Gradient" id="Gradient_4ifp7"]
+offsets = PackedFloat32Array(0, 0.683099)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0.592346, 0.519542, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4ifp7"]
+gradient = SubResource("Gradient_4ifp7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_320au"]
+render_priority = 0
+shader = ExtResource("1_20wwc")
+shader_parameter/angle = 1.0
+shader_parameter/folliagetexture = ExtResource("2_4ifp7")
+shader_parameter/albedoadd = Color(0.952941, 0.909804, 0.635294, 1)
+shader_parameter/normalmapactive = false
+shader_parameter/normaldepth = 1.0
+shader_parameter/backlightcolor = Color(0.258824, 0.290196, 0, 1)
+shader_parameter/alphacissorthreshold = SubResource("GradientTexture1D_4ifp7")
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gy47b"]
+gradient = SubResource("Gradient_4ifp7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gy47b"]
+render_priority = 0
+shader = ExtResource("1_20wwc")
+shader_parameter/angle = 1.0
+shader_parameter/folliagetexture = ExtResource("3_4ifp7")
+shader_parameter/albedoadd = Color(0.952941, 0.909804, 0.635294, 1)
+shader_parameter/normalmapactive = false
+shader_parameter/normaldepth = 1.0
+shader_parameter/backlightcolor = Color(0.258824, 0.290196, 0, 1)
+shader_parameter/alphacissorthreshold = SubResource("GradientTexture1D_gy47b")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cp34x"]
+_surfaces = [{
+"aabb": AABB(-0.530104, -0.0378588, -0.710544, 1.15929, 1.2, 1.32966),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "high-grass-1-01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAEZMAAD//27iDtYAAHvhAACixQAAAABn6UZMAABurAAA1h4AAMI10tT//wAAyT0AAMTwAACvvP//AAAAAA==")
+}, {
+"aabb": AABB(-0.621875, -0.0378588, -0.570589, 1.2, 1.34205, 1.12981),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkA"),
+"name": "high-grass-1-02",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAFODAAD//+bkU4MAAP//AABTgwAAAADm5FODAAARVwAAAAAAAFat/////wAAVq0AAP//AAARV+bkAAAAADf0AAAQPAAAoxm5tAnGAAAmGAAA+cYAADf05uQQPAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nmn4i"]
+resource_name = "treekitbash_Plane_204"
+_surfaces = [{
+"aabb": AABB(-0.530104, -0.0378588, -0.710544, 1.15929, 1.2, 1.32966),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAAAA/////wAA/////wAAAAA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("ShaderMaterial_320au"),
+"name": "high-grass-1-01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAEZMiJb//27iDtaNlnvhAACixYmWAABn6UZMiZZurAAA1h6Y0cI10tT//5PRyT0AAMTwjNGvvP//AACr0f9///+Kfmf5JX8m/E5/3Pzteqz35ntF+f9///8VeAHz")
+}, {
+"aabb": AABB(-0.621875, -0.0378588, -0.570589, 1.2, 1.34205, 1.12981),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAA"),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkA"),
+"material": SubResource("ShaderMaterial_gy47b"),
+"name": "high-grass-1-02",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAFODAID//+bkU4MAgP//AABTgwCAAADm5FODAIARVwAAAAD+sVat/////zGyVq0AAP//C7IRV+bkAAAMsjf0AAAQPDDqoxm5tAnGLeomGAAA+cYl6jf05uQQPEXq/3////9/////f////3////9////9j2P5hYh5/BKJP/zgeOv20Xke+P9///8qdOnw")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cp34x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmbde"]
+render_priority = 0
+shader = ExtResource("1_20wwc")
+shader_parameter/angle = 1.0
+shader_parameter/folliagetexture = ExtResource("5_320au")
+shader_parameter/albedoadd = Color(0.952941, 0.909804, 0.635294, 1)
+shader_parameter/normalmapactive = false
+shader_parameter/normaldepth = 1.0
+shader_parameter/backlightcolor = Color(0.258824, 0.290196, 0, 1)
+shader_parameter/alphacissorthreshold = ExtResource("4_e602h")
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rm3qc"]
+gradient = SubResource("Gradient_4ifp7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0tl1p"]
+render_priority = 0
+shader = ExtResource("1_20wwc")
+shader_parameter/angle = 1.0
+shader_parameter/folliagetexture = ExtResource("3_4ifp7")
+shader_parameter/albedoadd = Color(0.952941, 0.909804, 0.635294, 1)
+shader_parameter/normalmapactive = false
+shader_parameter/normaldepth = 1.0
+shader_parameter/backlightcolor = Color(0.258824, 0.290196, 0, 1)
+shader_parameter/alphacissorthreshold = SubResource("GradientTexture1D_rm3qc")
+
+[node name="Grass-02" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_nmn4i")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_nmbde")
+surface_material_override/1 = SubResource("ShaderMaterial_0tl1p")

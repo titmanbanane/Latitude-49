@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://b2dp5v6gudv8s"]
+
+[ext_resource type="Texture2D" uid="uid://7mmdxyebu2mt" path="res://textures/denim/Fabric_Denim_002_COLOR.jpg" id="1_qryvn"]
+[ext_resource type="Texture2D" uid="uid://4wr3ietq58gi" path="res://textures/denim/Fabric_Denim_002_OCC.jpg" id="2_qp43y"]
+[ext_resource type="Texture2D" uid="uid://3jb003gvr4bg" path="res://textures/denim/Fabric_Denim_002_DISP.png" id="3_cv0u6"]
+[ext_resource type="Texture2D" uid="uid://v888xlucln6v" path="res://textures/denim/Fabric_Denim_002_NORM.jpg" id="4_h4oxx"]
+[ext_resource type="Texture2D" uid="uid://ccras84bbmvj0" path="res://textures/denim/Fabric_Denim_002_ROUGH.jpg" id="5_q3ei7"]
+
+[resource]
+albedo_texture = ExtResource("1_qryvn")
+metallic_specular = 0.0
+roughness_texture = ExtResource("5_q3ei7")
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("4_h4oxx")
+ao_enabled = true
+ao_texture = ExtResource("2_qp43y")
+heightmap_enabled = true
+heightmap_scale = 0.2
+heightmap_texture = ExtResource("3_cv0u6")
+uv1_scale = Vector3(4.735, 4.735, 4.735)
+grow = true
+grow_amount = 0.004

@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c71uogah71qn8"]
+
+[ext_resource type="Texture2D" uid="uid://dp3bsxdj52gwc" path="res://meshes/trees/treefoliagepack/textures/bark.jpg" id="1_d1bqw"]
+[ext_resource type="Texture2D" uid="uid://dt5v6t4ft7bah" path="res://meshes/trees/treefoliagepack/textures/bark_Ao.png" id="2_ch23u"]
+[ext_resource type="Texture2D" uid="uid://domu5m0ogt4nw" path="res://meshes/trees/treefoliagepack/textures/bark_Height.png" id="3_w3oyp"]
+[ext_resource type="Texture2D" uid="uid://rbchl4h6ur26" path="res://meshes/trees/treefoliagepack/textures/bark_Normal.png" id="4_15ylw"]
+
+[resource]
+resource_name = "trunk-01"
+albedo_color = Color(1, 0.768188, 0.585384, 1)
+albedo_texture = ExtResource("1_d1bqw")
+normal_enabled = true
+normal_scale = -2.5
+normal_texture = ExtResource("4_15ylw")
+ao_enabled = true
+ao_texture = ExtResource("2_ch23u")
+heightmap_scale = 1.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_w3oyp")
+backlight = Color(0.898039, 0.843137, 0.596078, 1)

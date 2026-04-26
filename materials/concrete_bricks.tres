@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://kwbubg3icjpg"]
+
+[ext_resource type="Texture2D" uid="uid://bncu6e0gjmsql" path="res://textures/concrete_bricks/tiles_0036_base_color_2k.jpg" id="1_1ov4y"]
+[ext_resource type="Texture2D" uid="uid://bk7vmdq72kyxf" path="res://textures/concrete_bricks/tiles_0036_ambient_occlusion_2k.jpg" id="2_spxpl"]
+[ext_resource type="Texture2D" uid="uid://b4ugrclj4rj76" path="res://textures/concrete_bricks/tiles_0036_normal_opengl_2k.png" id="3_o54bh"]
+[ext_resource type="Texture2D" uid="uid://bpw823cl4xnds" path="res://textures/concrete_bricks/tiles_0036_roughness_2k.jpg" id="4_uiawy"]
+
+[resource]
+albedo_texture = ExtResource("1_1ov4y")
+roughness_texture = ExtResource("4_uiawy")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("3_o54bh")
+ao_enabled = true
+ao_texture = ExtResource("2_spxpl")
+uv1_scale = Vector3(0.39, 0.39, 0.39)
+uv1_triplanar = true

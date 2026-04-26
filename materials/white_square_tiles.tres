@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dx70lqnvr6hln"]
+
+[ext_resource type="Texture2D" uid="uid://deipgnu8k5t1j" path="res://textures/white_square_tiles/WhiteTiles03_2K_BaseColor.png" id="1_wa8vl"]
+[ext_resource type="Texture2D" uid="uid://bpcxtd7ax3vo3" path="res://textures/white_square_tiles/WhiteTiles03_2K_AO.png" id="2_sr4f0"]
+[ext_resource type="Texture2D" uid="uid://clkli3ojbrfhp" path="res://textures/white_square_tiles/WhiteTiles03_2K_Height.png" id="3_hu21g"]
+[ext_resource type="Texture2D" uid="uid://bhjkh81g4oku5" path="res://textures/white_square_tiles/WhiteTiles03_2K_Normal.png" id="4_kidyx"]
+[ext_resource type="Texture2D" uid="uid://qss1uwnxiaco" path="res://textures/white_square_tiles/WhiteTiles03_2K_Roughness.png" id="5_4ax4h"]
+
+[resource]
+albedo_texture = ExtResource("1_wa8vl")
+roughness_texture = ExtResource("5_4ax4h")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("4_kidyx")
+ao_enabled = true
+ao_texture = ExtResource("2_sr4f0")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 0.25
+heightmap_texture = ExtResource("3_hu21g")

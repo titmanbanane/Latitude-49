@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=4 uid="uid://djl8eia0aqs0r"]
+
+[ext_resource type="Texture2D" uid="uid://vnpdwkf4q8lt" path="res://meshes/trees/treefoliagepack/textures/WheatGrass_Clump_Opacity.png" id="1_iftxi"]
+[ext_resource type="Shader" uid="uid://bf22t18pled5f" path="res://shaders/gamegrass.tres" id="3_d581s"]
+[ext_resource type="Texture2D" uid="uid://bfwgsvj2cnxtc" path="res://meshes/trees/treefoliagepack/textures/WheatGrass_Clump_Diffuse.png" id="4_6ynaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_slvhf"]
+render_priority = 0
+shader = ExtResource("3_d581s")
+shader_parameter/angle = 0.2
+shader_parameter/folliagetexture = ExtResource("4_6ynaa")
+shader_parameter/albedoadd = Color(0.747058, 0.824613, 0.662595, 1)
+shader_parameter/alphacissorthreshold = ExtResource("1_iftxi")
+shader_parameter/backlightcolor = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0nxcc"]
+_surfaces = [{
+"aabb": AABB(-0.372015, -0.0404761, -0.278929, 0.748778, 0.28671, 0.643051),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAABAAFAAAABgAHAAgACAAHAAkABwAGAAoACgAGAAsADAANAA4ADgANAA8ADQAMABAAEAAMABEAEgATABQAEwAVABQAFAAWABIAFgAXABIAGAAZABoAGQAbABoAGgAcABgAHAAdABgAHgAfACAAHwAhACAAIAAiAB4AIgAjAB4AJAAlACYAJgAlACcAJQAkACgAKAAkACkAKgArACwAKwAtACwALAAuACoALgAvACoAMAAxADIAMQAzADIAMgA0ADAANAA1ADAANgA3ADgANwA5ADgAOAA6ADYAOgA7ADYA"),
+"name": "WheatGrass_Low",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("320EvPvVAAAVSTyp//8AAGxwCxiR0QAAO08kDgL+AABAWEIlD5YAANhZnsI8mQAAYW8osinJAABKaPsYRr0AAAx/xo+2/QAAYXQAAJXyAACJkmEiOpYAAEaW5LbSngAA4ZoItmPFAAAunmYY68EAAAXFwa+l5AAAAcXKGUXkAABwqmEoaoQAAE+jjb6phwAAeL4/8VhmAABYhvzh2zUAAFO94xPDagAAhoMrEUVAAADg/BEXLzkAAP//ROsBOwAAsqQdw5xUAAD3b1/MimwAAF+WABfsRQAANWUzJpBiAABMls09AAAAAE+oj9/kDgAAA3TfooE6AADlhMmSZQwAAM10ARrYPwAAKIIOESsRAADLlwwpiWQAADeUQ6y+YQAAXSwQptsuAACmLYgZtjoAAAAAdp/zOAAAwAG9GA1AAAAMRmM2CGsAAHxHv7vqXAAAXT/8vn9yAACGcsDJ34cAAAxEcRdzgwAAEneqKPGSAAD7HdUyObcAANoWlNAsowAA9lW+/I2BAAAlnozw6JMAAA9W1hI0gwAAkJ3sEpaOAAChK4Qg/tIAAFIn//+izAAAKW0EqiOkAACelbSYJIwAAIxoihmZpAAAoI58EJKJAAAjb9kfTt4AAO5vx6p83QAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qx8cv"]
+resource_name = "grasspack_Leaves"
+_surfaces = [{
+"aabb": AABB(-0.372015, -0.0404761, -0.278929, 0.748778, 0.28671, 0.643051),
+"attribute_data": PackedByteArray("fofzbf//GADF+zt4//8YALeJ4/T//00mS/vI6///TSYzCcjr//9NJrMINnj//xgAfofzbf//GAC3ieP0//9NJsX7O3j//xgAS/vI6///TSYzCcjr//9NJrMINnj//xgAfofzbf//GAC3ieP0//9NJsX7O3j//xgAS/vI6///TSYzCcjr//9NJrMINnj//xgAfofzbf//GADF+zt4//8YALeJ4/T//00mS/vI6///TSYzCcjr//9NJrMINnj//xgAfofzbf//GADF+zt4//8YALeJ4/T//00mS/vI6///TSYzCcjr//8UCbMINnj//xgAfofzbf//GADF+zt4//8YALeJ4/T//00mS/vI6///TSYzCcjr//9NJrMINnj//xgAfofzbf//GAC3ieP0//9NJsX7O3j//xgAS/vI6///TSYzCcjr///MILMINnj//xgAfofzbf//GADF+zt4//8YALeJ4/T//00mS/vI6///TSYzCcjr///cJLMINnj//xgAfofzbf//GADF+zt4//8YALeJ4/T//00mS/vI6///TSYzCcjr//9NJrMINnj//xgAfofzbf//GADF+zt4//8YALeJ4/T//00mS/vI6///TSYzCcjr//9NJrMINnj//xgA"),
+"format": 34896613431,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAABAAFAAAABgAHAAgACAAHAAkABwAGAAoACgAGAAsADAANAA4ADgANAA8ADQAMABAAEAAMABEAEgATABQAEwAVABQAFAAWABIAFgAXABIAGAAZABoAGQAbABoAGgAcABgAHAAdABgAHgAfACAAHwAhACAAIAAiAB4AIgAjAB4AJAAlACYAJgAlACcAJQAkACgAKAAkACkAKgArACwAKwAtACwALAAuACoALgAvACoAMAAxADIAMQAzADIAMgA0ADAANAA1ADAANgA3ADgANwA5ADgAOAA6ADYAOgA7ADYA"),
+"material": SubResource("ShaderMaterial_slvhf"),
+"name": "WheatGrass_Low",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("320EvPvVzckVSTyp///R9WxwCxiR0VbHO08kDgL+P/NAWEIlD5bvldhZnsI8mf+bYW8osinJ8wNKaPsYRr0dAgx/xo+2/dMHYXQAAJXysgKJkmEiOpZpA0aW5LbSnnoG4ZoItmPFOgcunmYY68HCAAXFwa+l5JcFAcXKGUXkjgJwqmEoaoTNA0+jjb6ph0sPeL4/8VhmT/xYhvzh2zVV0FO94xPDak3/hoMrEUVA19Pg/BEXLzmKz///ROsBO3XUsqQdw5xUK9v3b1/MimxX+V+WABfsRcbXNWUzJpBinfxMls09AAAqqE+oj9/kDrOvA3TfooE6r8blhMmSZQwlm810ARrYPy7JKIIOESsRX57LlwwpiWRt+jeUQ6y+Ybv2XSwQptsuuQGmLYgZtjpMBAAAdp/zOKABwAG9GA1ADgQMRmM2CGsrB3xHv7vqXE4HXT/8vn9ypZCGcsDJ34fppQxEcRdzgyqMEneqKPGScaD7HdUyObcwvdoWlNAsoxW89lW+/I2B2I4lnozw6JOeng9W1hI0gzqRkJ3sEpaOeZyhK4Qg/tLjwVIn//+izMq+KW0EqiOkxqmelbSYJIwthYxoihmZpAytoI58EJKJ9osjb9kfTt653e5vx6p83dTZBoC29o1/Pfezb0v0Vm+28f9uZ+48hhrUtbbSeggNac6N2Zl6a8/6blEKbftGis9/WsyPg+4Cf7Vx+CaF6gd2jjOjAX6NpvSCwIQRAP6FuQIXgPQJeoYEFhqCO/+Qe8zqm4iP4tNl0wypgXPz2npxAkB3s9nJfwrPz415Cyufqhg0gFsMf4SzI+6CgQiclOcP6m2cjnBpR4N+DFwf859ggFlAhoXESD2RcNUQStqpSeXfpl0kb3lb/j6RdRo4o/gsTactJL2Qo++kaD0hqml62HKCUAUXmLob8IiqCya7FaMYc50brVlqfb18AweHkAQP")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0nxcc")
+metadata/extras = {
+"hops": {}
+}
+
+[node name="Wheat_Grass_LowPoly" type="MeshInstance3D"]
+transform = Transform3D(0.646192, 0, -0.763174, 0, 1, 0, 0.763174, 0, 0.646192, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qx8cv")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_slvhf")
+metadata/extras = {
+"DM": {},
+"ant_landscape": {},
+"hops": {},
+"kitops": {
+"insert_target": null,
+"main_object": null,
+"mirror_target": null,
+"reserved_target": null
+}
+}

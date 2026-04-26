@@ -1,0 +1,26 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bscc76ywj65rc"]
+
+[ext_resource type="Texture2D" uid="uid://ldw46i21636w" path="res://textures/cracked_concrete/ground_0046_color_2k.jpg" id="1_4xnia"]
+[ext_resource type="Texture2D" uid="uid://nvefoaxnsbmh" path="res://textures/cracked_concrete/ground_0046_ao_2k.jpg" id="2_jbpu3"]
+[ext_resource type="Texture2D" uid="uid://b75bkl3aqpa0j" path="res://textures/cracked_concrete/ground_0046_height_2k.png" id="3_3j6t5"]
+[ext_resource type="Texture2D" uid="uid://cdmd02sv0klqb" path="res://textures/cracked_concrete/ground_0046_normal_opengl_2k.png" id="4_mkhir"]
+[ext_resource type="Texture2D" uid="uid://db8upo2kjof06" path="res://textures/cracked_concrete/ground_0046_roughness_2k.jpg" id="5_5bxek"]
+
+[resource]
+albedo_texture = ExtResource("1_4xnia")
+roughness_texture = ExtResource("5_5bxek")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("4_mkhir")
+ao_enabled = true
+ao_texture = ExtResource("2_jbpu3")
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_3j6t5")
+uv1_scale = Vector3(-0.114, -0.114, -0.114)
+uv1_triplanar = true
+texture_filter = 5
+stencil_flags = 1
+stencil_compare = 2

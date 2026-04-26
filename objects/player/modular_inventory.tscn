@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://di1ktmla3votg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnre8"]
+size = Vector3(0.785, 0.372, 0.207)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npw43"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxsku"]
+
+[node name="modular_inventory" type="Node3D" unique_id=179524332]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1827408940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3788286, 0)
+size = Vector3(0.6, 0.8, 0.3)
+
+[node name="zone 1" type="Area3D" parent="." unique_id=513776826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49250165, 0.15226212)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zone 1" unique_id=102511726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05517575, 0.096191406)
+shape = SubResource("BoxShape3D_tnre8")
+
+[node name="zone 2" type="Area3D" parent="." unique_id=164307333]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zone 2" unique_id=1734955700]
+shape = SubResource("BoxShape3D_npw43")
+
+[node name="zone 3" type="Area3D" parent="." unique_id=1952789726]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zone 3" unique_id=243535628]
+shape = SubResource("BoxShape3D_cxsku")

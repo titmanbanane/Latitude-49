@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2ocvlqwiqsdl"]
+
+[ext_resource type="Material" uid="uid://dx70lqnvr6hln" path="res://materials/white_square_tiles.tres" id="1_hbrlv"]
+
+[sub_resource type="Resource" id="Resource_pcwlk"]
+metadata/__load_path__ = "res://multy_child_manager.gd"
+
+[sub_resource type="BoxMesh" id="BoxMesh_6qqor"]
+
+[node name="textures_materials" type="Node3D"]
+script = SubResource("Resource_pcwlk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_hbrlv")
+mesh = SubResource("BoxMesh_6qqor")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21496, 0.489764, 0.100565)
+material_override = ExtResource("1_hbrlv")
+mesh = SubResource("BoxMesh_6qqor")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.748687, -0.712716, -0.450834)
+material_override = ExtResource("1_hbrlv")
+mesh = SubResource("BoxMesh_6qqor")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22305, 0.116947, 0.207085)
+material_override = ExtResource("1_hbrlv")
+mesh = SubResource("BoxMesh_6qqor")
