@@ -2,6 +2,7 @@
 extends Node3D
 
 @export_enum("neutral", "low", "mid", "high", "aimed") var stance: int
+
 var stance_val: int = 0
 
 @export_group("neutral")
@@ -36,6 +37,7 @@ var stance_val: int = 0
 @onready var aimpos: Node3D = $"../../head/camera_rotation/aimpos"
 @onready var cam: Camera3D = $"../../head/camera_rotation/Camera3D"
 @onready var debug_bullet: Node3D = $"../../debug bullet"
+@onready var player : CharacterBody3D = $"../.."
 
 var weapon_snappiness: float = 10.0
 var weapon: Node3D
@@ -89,8 +91,20 @@ func _handle_fire() -> void:
 
 	if firecast.is_colliding():
 		debug_bullet.global_position = firecast.get_collision_point()
+		if firecast.get_collider().get_class() == "PhysicalBone3D":
+			var bone = firecast.get_collider()
+			var npc = bone.get_parent().get_parent().get_parent().get_parent().get_parent()
+			if npc.state != npc.dead:
+				if bone.is_in_group("head"):
+					npc.health["head"] -= 30
+				elif bone.is_in_group("torso"):
+					npc.health["torso"] -= 30
+				npc.health_check()
 
-func _physics_process(delta: float) -> void:
+func take_damage(part, damage_origin):
+	pass
+
+func _process(delta: float) -> void:
 	if not weapon:
 		return
 
@@ -164,8 +178,10 @@ func _tween_to_stance(new_stance: int) -> void:
 			target_pos = high_pos
 			target_rot = high_rot
 		4:
-			# Aimed: weapon_target does the moving, not self
+			player.speed_penalty = 1.5
 			return
+		!4:
+			player.speed_penalty = 1
 
 	# Snapshot current rotation as the start point for lerp_angle
 	_stance_rot_from = rotation

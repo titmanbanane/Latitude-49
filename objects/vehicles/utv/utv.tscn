@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://bx4aokus7dh6k"]
+[gd_scene format=4 uid="uid://bx4aokus7dh6k"]
 
 [ext_resource type="Script" uid="uid://difc2j0yux03m" path="res://objects/vehicles/cehicles.gd" id="1_d25xc"]
 [ext_resource type="Script" uid="uid://ct72cus8cgk2x" path="res://objects/interarea.gd" id="2_ow4xo"]
@@ -961,7 +961,7 @@ size = Vector3(0.916992, 0.10083, 1.32202)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d25xc"]
 size = Vector3(2.13672, 1.82886, 4.06836)
 
-[node name="utv" type="Node3D" node_paths=PackedStringArray("body", "camera", "cam_pos", "out_pos", "player_pos")]
+[node name="utv" type="Node3D" unique_id=1680738508 node_paths=PackedStringArray("body", "camera", "cam_pos", "out_pos", "player_pos")]
 script = ExtResource("1_d25xc")
 body = NodePath("utv")
 camera = NodePath("utv/Camera3D")
@@ -974,157 +974,161 @@ drive_tires_joint = [NodePath("utv/suspention_BL"), NodePath("utv/suspention_BR"
 drive_tires = [NodePath("utv/wheel_BL"), NodePath("utv/wheel_BR")]
 steer_angle = 45
 
-[node name="utv" type="RigidBody3D" parent="."]
+[node name="utv" type="RigidBody3D" parent="." unique_id=858692539]
 mass = 1200.0
 physics_material_override = SubResource("PhysicsMaterial_km6xo")
 can_sleep = false
 
-[node name="CollisionShape3D19" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="utv" unique_id=1238947560]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_ow4xo")
 
-[node name="CollisionShape3D29" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="utv" unique_id=158097484]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_6a4w1")
 
-[node name="CollisionShape3D17" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="utv" unique_id=1202583798]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_r1eyb")
 
-[node name="CollisionShape3D30" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="utv" unique_id=511146034]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_jk6rt")
 
-[node name="CollisionShape3D32" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="utv" unique_id=1950632482]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_afjje")
 
-[node name="CollisionShape3D35" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D35" type="CollisionShape3D" parent="utv" unique_id=790866067]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_7ni7q")
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="utv" unique_id=104092682]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_a61bf")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="utv" unique_id=1551945879]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_jsem8")
 
-[node name="CollisionShape3D36" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D36" type="CollisionShape3D" parent="utv" unique_id=1624926327]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_wq7l3")
 
-[node name="CollisionShape3D37" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="utv" unique_id=1629223715]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_dvlvu")
 
-[node name="CollisionShape3D38" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D38" type="CollisionShape3D" parent="utv" unique_id=286873790]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_17jfx")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="utv" unique_id=1246795155]
 transform = Transform3D(-4.35675e-10, 0.00996707, 0, 0, 0, 0.00996707, 0.00996707, 4.35675e-10, 0, -0.0338014, 0.30896, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_h5b0s")
 
-[node name="CollisionShape3D31" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="utv" unique_id=1083342271]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_d25xc")
 
-[node name="CollisionShape3D28" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="utv" unique_id=987848078]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_5l8qw")
 
-[node name="CollisionShape3D27" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="utv" unique_id=1594698137]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_mh8nt")
 
-[node name="CollisionShape3D26" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="utv" unique_id=1538608342]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_35vph")
 
-[node name="CollisionShape3D25" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="utv" unique_id=1440045772]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_tl5yc")
 
-[node name="CollisionShape3D24" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="utv" unique_id=348647657]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_o8s2s")
 
-[node name="CollisionShape3D23" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="utv" unique_id=2001136239]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_jvxlr")
 
-[node name="CollisionShape3D22" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="utv" unique_id=1370898884]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_iyjru")
 
-[node name="CollisionShape3D21" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="utv" unique_id=928400505]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_13j2v")
 
-[node name="CollisionShape3D20" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="utv" unique_id=1100180886]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_unok8")
 
-[node name="CollisionShape3D18" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="utv" unique_id=1659431844]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_agxhd")
 
-[node name="CollisionShape3D16" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="utv" unique_id=1793216142]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_k638s")
 
-[node name="CollisionShape3D15" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="utv" unique_id=1001914937]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_a02nx")
 
-[node name="CollisionShape3D14" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="utv" unique_id=669497864]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_6ouge")
 
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="utv" unique_id=1572963695]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_k5alw")
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="utv" unique_id=1286021541]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_761b6")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="utv" unique_id=985488922]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_an887")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="utv" unique_id=2100915967]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_t7wpm")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="utv" unique_id=704882619]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_7epab")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="utv" unique_id=254376975]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_cas8k")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="utv" unique_id=1598153432]
 transform = Transform3D(-4.35675e-10, 0.00996709, 0, 0, 0, 0.00996709, 0.00996709, 4.35675e-10, 0, -0.0338014, 0.308961, 0.0302966)
 shape = SubResource("ConvexPolygonShape3D_4k53x")
 
-[node name="CollisionShape3D33" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D33" type="CollisionShape3D" parent="utv" unique_id=1807010449]
 transform = Transform3D(-5.26102e-08, 1.57007e-08, -1.25603, 0.359191, 1.20358, 0, 1.20358, -0.359191, -5.49028e-08, -0.643382, 1.16073, 0.202617)
 shape = SubResource("CylinderShape3D_17jfx")
 
-[node name="CollisionShape3D34" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D34" type="CollisionShape3D" parent="utv" unique_id=708108470]
 transform = Transform3D(-5.26102e-08, 1.57007e-08, -1.25603, 0.359191, 1.20358, 0, 1.20358, -0.359191, -5.49028e-08, 0.579638, 1.16073, 0.202617)
 shape = SubResource("CylinderShape3D_17jfx")
 
-[node name="suspention_FL" type="Generic6DOFJoint3D" parent="utv"]
+[node name="suspention_FL" type="Generic6DOFJoint3D" parent="utv" unique_id=1688151677]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.782094, 0.440331, 1.75738)
 node_a = NodePath("..")
 node_b = NodePath("../wheel_FL")
+linear_limit_x/softness = 0.01
+linear_limit_x/damping = 0.01
 linear_limit_y/upper_distance = 0.335
 linear_limit_y/lower_distance = -0.485
+linear_limit_z/softness = 0.01
+linear_limit_z/damping = 0.01
 linear_spring_y/enabled = true
 linear_spring_y/stiffness = 50000.0
 linear_spring_y/damping = 5000.0
@@ -1132,12 +1136,16 @@ linear_spring_y/equilibrium_point = -0.115
 angular_limit_x/enabled = false
 angular_motor_y/enabled = true
 
-[node name="suspention_FR" type="Generic6DOFJoint3D" parent="utv"]
+[node name="suspention_FR" type="Generic6DOFJoint3D" parent="utv" unique_id=1234371667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.849694, 0.440321, 1.75744)
 node_a = NodePath("..")
 node_b = NodePath("../wheel_FR")
+linear_limit_x/softness = 0.01
+linear_limit_x/damping = 0.01
 linear_limit_y/upper_distance = 0.335
 linear_limit_y/lower_distance = -0.485
+linear_limit_z/softness = 0.01
+linear_limit_z/damping = 0.01
 linear_spring_y/enabled = true
 linear_spring_y/stiffness = 50000.0
 linear_spring_y/damping = 5000.0
@@ -1145,12 +1153,16 @@ linear_spring_y/equilibrium_point = -0.115
 angular_limit_x/enabled = false
 angular_motor_y/enabled = true
 
-[node name="suspention_BL" type="Generic6DOFJoint3D" parent="utv"]
+[node name="suspention_BL" type="Generic6DOFJoint3D" parent="utv" unique_id=837124325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78209, 0.440331, -1.54793)
 node_a = NodePath("..")
 node_b = NodePath("../wheel_BL")
+linear_limit_x/softness = 0.01
+linear_limit_x/damping = 0.01
 linear_limit_y/upper_distance = 0.335
 linear_limit_y/lower_distance = -0.485
+linear_limit_z/softness = 0.01
+linear_limit_z/damping = 0.01
 linear_spring_y/enabled = true
 linear_spring_y/stiffness = 50000.0
 linear_spring_y/damping = 5000.0
@@ -1158,12 +1170,16 @@ linear_spring_y/equilibrium_point = -0.115
 angular_limit_x/enabled = false
 angular_motor_x/force_limit = 2400.0
 
-[node name="suspention_BR" type="Generic6DOFJoint3D" parent="utv"]
+[node name="suspention_BR" type="Generic6DOFJoint3D" parent="utv" unique_id=896059502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.849694, 0.440331, -1.54786)
 node_a = NodePath("..")
 node_b = NodePath("../wheel_BR")
+linear_limit_x/softness = 0.01
+linear_limit_x/damping = 0.01
 linear_limit_y/upper_distance = 0.335
 linear_limit_y/lower_distance = -0.485
+linear_limit_z/softness = 0.01
+linear_limit_z/damping = 0.01
 linear_spring_y/enabled = true
 linear_spring_y/stiffness = 50000.0
 linear_spring_y/damping = 5000.0
@@ -1171,170 +1187,174 @@ linear_spring_y/equilibrium_point = -0.115
 angular_limit_x/enabled = false
 angular_motor_x/force_limit = 2400.0
 
-[node name="wheel_FL" type="RigidBody3D" parent="utv"]
+[node name="wheel_FL" type="RigidBody3D" parent="utv" unique_id=457904909]
 transform = Transform3D(1, -4.37115e-08, 0, 4.37115e-08, 1, -4.37115e-08, 3.55271e-15, 4.37114e-08, 1, 0.782094, 0.440331, 1.75738)
 mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_d25xc")
 can_sleep = false
 continuous_cd = true
 
-[node name="wheelmesh_FL" type="MeshInstance3D" parent="utv/wheel_FL"]
+[node name="wheelmesh_FL" type="MeshInstance3D" parent="utv/wheel_FL" unique_id=375010310]
 transform = Transform3D(-4.35673e-10, 0.00996707, 4.35675e-10, 4.35675e-10, -4.35674e-10, 0.00996707, 0.00996707, 4.35673e-10, -4.35674e-10, 0, 0, 0)
 mesh = SubResource("ArrayMesh_noawp")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_FL"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_FL" unique_id=2053772011]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.66454e-13, -2.66454e-13, 1, -0.00818008, 0, 0)
 shape = SubResource("CylinderShape3D_d25xc")
 
-[node name="wheel_FR" type="RigidBody3D" parent="utv"]
+[node name="wheel_FR" type="RigidBody3D" parent="utv" unique_id=780588809]
 transform = Transform3D(1, -4.37115e-08, 0, 4.37115e-08, 1, -4.37115e-08, 3.55271e-15, 4.37114e-08, 1, -0.849694, 0.440321, 1.75744)
 mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_d25xc")
 can_sleep = false
 continuous_cd = true
 
-[node name="wheelmesh_FR" type="MeshInstance3D" parent="utv/wheel_FR"]
+[node name="wheelmesh_FR" type="MeshInstance3D" parent="utv/wheel_FR" unique_id=407441471]
 transform = Transform3D(-4.35673e-10, 0.00996707, 4.35675e-10, 4.35675e-10, -4.35674e-10, 0.00996707, 0.00996707, 4.35673e-10, -4.35674e-10, 0, 0, 0)
 mesh = SubResource("ArrayMesh_unkvq")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_FR"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_FR" unique_id=789012038]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.66454e-13, -2.66454e-13, 1, 0.00439459, 0, 0)
 shape = SubResource("CylinderShape3D_d25xc")
 
-[node name="wheel_BL" type="RigidBody3D" parent="utv"]
+[node name="wheel_BL" type="RigidBody3D" parent="utv" unique_id=1566113810]
 transform = Transform3D(1, -4.37115e-08, 0, 4.37115e-08, 1, -4.37115e-08, 3.55271e-15, 4.37114e-08, 1, 0.78209, 0.440331, -1.54793)
 mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_d25xc")
 can_sleep = false
 continuous_cd = true
 
-[node name="wheelmesh_BL" type="MeshInstance3D" parent="utv/wheel_BL"]
+[node name="wheelmesh_BL" type="MeshInstance3D" parent="utv/wheel_BL" unique_id=660405232]
 transform = Transform3D(-4.35675e-10, 0.00996707, 4.35675e-10, 4.35675e-10, -4.35675e-10, 0.00996707, 0.00996707, 4.35673e-10, -4.35675e-10, 0, 0, 0)
 mesh = SubResource("ArrayMesh_xlaa5")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_BL"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_BL" unique_id=1446963269]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.66454e-13, -2.66454e-13, 1, -0.00818008, 0, 0)
 shape = SubResource("CylinderShape3D_d25xc")
 
-[node name="wheel_BR" type="RigidBody3D" parent="utv"]
+[node name="wheel_BR" type="RigidBody3D" parent="utv" unique_id=1857771258]
 transform = Transform3D(1, -4.37115e-08, 0, 4.37115e-08, 1, -4.37115e-08, 3.55271e-15, 4.37114e-08, 1, -0.849694, 0.440331, -1.54786)
 mass = 25.0
 physics_material_override = SubResource("PhysicsMaterial_d25xc")
 can_sleep = false
 continuous_cd = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_BR"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/wheel_BR" unique_id=317612859]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 1.64203e-15, 2.66185e-13, -2.66454e-13, 1, 0.0166016, 0, 0)
 shape = SubResource("CylinderShape3D_d25xc")
 
-[node name="wheelmesh_BR" type="MeshInstance3D" parent="utv/wheel_BR"]
+[node name="wheelmesh_BR" type="MeshInstance3D" parent="utv/wheel_BR" unique_id=814552925]
 transform = Transform3D(-4.35674e-10, 0.00996707, 4.35675e-10, 4.35675e-10, -4.35674e-10, 0.00996707, 0.00996707, 4.35674e-10, -4.35674e-10, 0, 0, 0)
 mesh = SubResource("ArrayMesh_esjl5")
 skeleton = NodePath("")
 
-[node name="UTV" type="Node3D" parent="utv"]
+[node name="UTV" type="Node3D" parent="utv" unique_id=659440418]
 transform = Transform3D(-5.49028e-08, 0, -1.25603, 0, 1.25603, 0, 1.25603, 0, -5.49028e-08, -0.0338014, -0.00104541, 0.0302966)
 
-[node name="WraithMesh01" type="MeshInstance3D" parent="utv/UTV"]
+[node name="WraithMesh01" type="MeshInstance3D" parent="utv/UTV" unique_id=1357715896]
 transform = Transform3D(0.00793538, 0, 0, 0, 0, 0.00793538, 0, -0.00793538, 0, 0, 0.246814, 0)
 mesh = SubResource("ArrayMesh_mq6av")
 skeleton = NodePath("")
 
-[node name="WraithMesh00" type="MeshInstance3D" parent="utv/UTV/WraithMesh01"]
+[node name="WraithMesh00" type="MeshInstance3D" parent="utv/UTV/WraithMesh01" unique_id=407217817]
 mesh = SubResource("ArrayMesh_yfulb")
 skeleton = NodePath("")
 
-[node name="WraithMesh00_005" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh00"]
+[node name="WraithMesh00_005" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh00" unique_id=1400858308]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.524, 32.4775, 90.4119)
 mesh = SubResource("ArrayMesh_3qlw4")
 skeleton = NodePath("")
 
-[node name="WraithMesh02" type="MeshInstance3D" parent="utv/UTV/WraithMesh01"]
+[node name="WraithMesh02" type="MeshInstance3D" parent="utv/UTV/WraithMesh01" unique_id=1867588756]
 mesh = SubResource("ArrayMesh_hs8qg")
 skeleton = NodePath("")
 
-[node name="WraithMesh00_001" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh00_001" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=1933949754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.9639, 67.0059, 77.8555)
 mesh = SubResource("ArrayMesh_525fj")
 skeleton = NodePath("")
 
-[node name="WraithMesh00_002" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh00_002" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=729491793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6712, 67.9981, 73.7156)
 mesh = SubResource("ArrayMesh_jxyyu")
 skeleton = NodePath("")
 
-[node name="WraithMesh00_003" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh00_003" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=1322965947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.9601, -67.0299, 77.8555)
 mesh = SubResource("ArrayMesh_thybd")
 skeleton = NodePath("")
 
-[node name="WraithMesh00_004" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh00_004" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=2106027875]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6928, -67.9515, 77.4306)
 mesh = SubResource("ArrayMesh_tyq03")
 skeleton = NodePath("")
 
-[node name="WraithMesh03_001" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh03_001" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=1336779411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.7, -0.00360568, 133.889)
 mesh = SubResource("ArrayMesh_tmunu")
 skeleton = NodePath("")
 
-[node name="WraithMesh06" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh06" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=1935611403]
 mesh = SubResource("ArrayMesh_mwpdt")
 skeleton = NodePath("")
 
-[node name="WraithMesh09" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh09" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=1905523260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.6403, 1.10998, 121.639)
 mesh = SubResource("ArrayMesh_aampf")
 skeleton = NodePath("")
 
-[node name="WraithMesh14" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02"]
+[node name="WraithMesh14" type="MeshInstance3D" parent="utv/UTV/WraithMesh01/WraithMesh02" unique_id=2033126335]
 mesh = SubResource("ArrayMesh_quwld")
 skeleton = NodePath("")
 
-[node name="WraithMesh05" type="MeshInstance3D" parent="utv/UTV/WraithMesh01"]
+[node name="WraithMesh05" type="MeshInstance3D" parent="utv/UTV/WraithMesh01" unique_id=618990184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9707, -3.37129, 35.0166)
 mesh = SubResource("ArrayMesh_br4r1")
 skeleton = NodePath("")
 
-[node name="WraithMesh07" type="MeshInstance3D" parent="utv/UTV/WraithMesh01"]
+[node name="WraithMesh07" type="MeshInstance3D" parent="utv/UTV/WraithMesh01" unique_id=404430724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.63344e-06, 0)
 mesh = SubResource("ArrayMesh_80mgc")
 skeleton = NodePath("")
 
-[node name="WraithMesh08" type="MeshInstance3D" parent="utv/UTV/WraithMesh01"]
+[node name="WraithMesh08" type="MeshInstance3D" parent="utv/UTV/WraithMesh01" unique_id=1953235762]
 mesh = SubResource("ArrayMesh_bnau4")
 skeleton = NodePath("")
 
-[node name="Camera3D" type="Camera3D" parent="utv"]
+[node name="Camera3D" type="Camera3D" parent="utv" unique_id=2088418339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033781, 3.57398, -3.9491)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="utv"]
+[node name="SpringArm3D" type="SpringArm3D" parent="utv" unique_id=1226681517]
 transform = Transform3D(-1, -2.26267e-08, 8.44439e-08, 8.88178e-16, 0.965926, 0.258819, -8.74228e-08, 0.258819, -0.965926, -0.0337812, 1.82765, 0.0336547)
 shape = SubResource("SeparationRayShape3D_d25xc")
 spring_length = 4.08
 
-[node name="campos" type="Node3D" parent="utv/SpringArm3D"]
+[node name="campos" type="Node3D" parent="utv/SpringArm3D" unique_id=1030105541]
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="utv"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="utv" unique_id=2095634926]
 transform = Transform3D(-4.30222e-08, -7.73161e-09, -1, -0.176879, 0.984233, 0, 0.984233, 0.176879, -4.37114e-08, -0.0337813, 1.17469, 1.63906)
 shape = SubResource("BoxShape3D_ij7uy")
 
-[node name="player pos" type="Marker3D" parent="utv"]
+[node name="player pos" type="Marker3D" parent="utv" unique_id=1697759986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.190346, 1.07386, 0.555785)
 
-[node name="out pos" type="Marker3D" parent="utv"]
+[node name="out pos" type="Marker3D" parent="utv" unique_id=625585573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25603, 0.384601, 0.809614)
 
-[node name="interarea" type="Area3D" parent="utv" groups=["interactible"]]
+[node name="interarea" type="Area3D" parent="utv" unique_id=1661363995 groups=["interactible"]]
 script = ExtResource("2_ow4xo")
 msg = "car entered"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/interarea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="utv/interarea" unique_id=1667225283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92227, 0.12738)
 visible = false
 shape = SubResource("BoxShape3D_d25xc")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="utv" unique_id=1616976408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83220744, 0)
+radius = 1.35
 
 [connection signal="interacted" from="utv/interarea" to="." method="_on_interarea_interacted"]

@@ -15,10 +15,8 @@ extends CharacterBody3D
 @onready var reach : RayCast3D = $head/camera_rotation/Camera3D/reach
 @onready var dofcast : RayCast3D = $head/camera_rotation/Camera3D/dofcast
 
-@onready var ik_cast_r = $ik_rays/ik_cast_r
-@onready var ik_cast_l = $ik_rays/ik_cast_l
-@onready var foot_l = $ik_points/foot_l
-@onready var foot_r = $ik_points/foot_r
+@onready var foot_l = $foot_l_Spring/foot_l
+@onready var foot_r = $foot_r_Spring/foot_r
 @onready var hand_l = $hand_l
 @onready var hand_r = $hand_r
 @onready var weapon_manager = $upperchest/weapon_manager
@@ -66,7 +64,6 @@ var h_velocity : Vector2
 var lean_progress = 0.5
 
 var stats : Dictionary = {
-	"health" = 100,
 	"hunger" = 100,
 	"thirst" = 100,
 	"stamina" = 100,
@@ -75,6 +72,16 @@ var stats : Dictionary = {
 	"sadness"= 0,
 	"temperature"= 25,
 	"dirty"= 0,
+}
+
+var health : Dictionary = {
+	"head" = 30,
+	"torso" = 90,
+	"stomac" = 80,
+	"left_arm" = 50,
+	"right_arm" = 50,
+	"left_leg" = 50,
+	"right_leg" = 50,
 }
 
 enum {
@@ -108,6 +115,7 @@ var state = idle:
 
 
 func _ready() -> void:
+	health_check()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$human_mesh.top_level = true
 	for ik in get_tree().get_nodes_in_group("ik"):
@@ -250,12 +258,6 @@ func _process(delta) -> void:
 	head_path.get_child(0).progress_ratio = lean_progress
 	head.global_position = head_path.get_child(0).global_position
 	
-	if foot_l.global_transform.origin.distance_to(ik_cast_l.get_collision_point()) > 1:
-		foot_l.global_transform.origin = ik_cast_l.get_collision_point()
-	
-	if foot_r.global_transform.origin.distance_to(ik_cast_r.get_collision_point()) > 1:
-		foot_r.global_transform.origin = ik_cast_r.get_collision_point()
-	
 	#parkour_system()
 
 
@@ -350,8 +352,25 @@ func recoil_fire(recoil : Vector3 =  Vector3(0.2,0.1,0.05)):
 	target_rotation += Vector3(recoil.x,randf_range(-recoil.y,recoil.y),randf_range(-recoil.z,recoil.z))
 
 
-func take_damage(damage,_source = null):
-	stats["health"] -= damage / resistance
+func take_damage(damage,_source = null, part = "head"):
+	health[part] -= damage
+	health_check()
+
+func health_check():
+	if health["head"] <= 0:
+		print("dead")
+	
+	if health["left_leg"] <= 0 or health["right_leg"] <= 0:
+		speed_penalty = 2
+	else:
+		speed_penalty = 1
+	
+	if health["left_arm"] <= 0 or health["right_arm"] <= 0:
+		weapon_manager.aim_tween_duration = 1
+		weapon_manager.stance_tween_duration = 3
+	else:
+		weapon_manager.aim_tween_duration = 0.15
+		weapon_manager.stance_tween_duration = 0.5
 
 func teleport(_position : Vector3):
 	global_position = _position
@@ -390,3 +409,10 @@ func _on_resume_button_down():
 func _on_quit_button_down():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+
+func _on_player_zone_body_entered(body: Node3D) -> void:
+	if body.is_in_group("npc"):
+		var npc = body
+		if npc.type == "zombie" and npc.state != npc. dead:
+			npc.state = npc.attack
