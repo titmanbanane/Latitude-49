@@ -93,6 +93,8 @@ func _handle_fire() -> void:
 		debug_bullet.global_position = firecast.get_collision_point()
 		if firecast.get_collider().get_class() == "PhysicalBone3D":
 			var bone = firecast.get_collider()
+			if bone.is_in_group("limb_bone"):
+				bone.scale = Vector3(0,0,0)
 			var npc = bone.get_parent().get_parent().get_parent().get_parent().get_parent()
 			if npc.state != npc.dead:
 				if bone.is_in_group("head"):
