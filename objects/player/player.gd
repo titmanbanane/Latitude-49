@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var head_path = $head_path
+@onready var head_path = $BoneAttachment3D/head_path
 @onready var head = $head
 @onready var cam : Camera3D = $head/camera_rotation/Camera3D
 @onready var cam_rot = $head/camera_rotation
@@ -63,6 +63,8 @@ var h_velocity : Vector2
 
 var lean_progress = 0.5
 
+var controls_active = true
+
 var stats : Dictionary = {
 	"hunger" = 100,
 	"thirst" = 100,
@@ -122,6 +124,8 @@ func _ready() -> void:
 		ik.start()
 
 func _input(event) -> void:
+	if !controls_active:
+		return
 	
 	rotate_y(deg_to_rad(get_right_stick().y * controller_sensitivity))
 	head.rotate_x(deg_to_rad(get_right_stick().x * controller_sensitivity))
@@ -191,7 +195,7 @@ func _process(delta) -> void:
 		$human_mesh.global_rotation.y = global_rotation.y
 	
 	var walking_space_vector : Vector2 = Vector2(velocity.x, velocity.z).rotated(global_rotation.y)*0.1
-	anim_tree.set("parameters/locomotion/blend_position", walking_space_vector)
+	anim_tree.set("parameters/locomotion/blend_position", walking_space_vector*1.25)
 	if Input.is_action_pressed("ui_cancel"):
 		anim_tree.set("parameters/fightstance/blend_amount", clamp(abs(walking_space_vector.length()*3), 0, 1))
 		anim_tree.tree_root.get_node("fightstance").filter_enabled = true
@@ -379,6 +383,8 @@ func die():
 	queue_free()
 
 func get_side_acceleration() -> Vector3:
+	if !controls_active:
+		return Vector3()
 	return global_transform.basis.x * (
 		Input.get_action_strength("right") - Input.get_action_strength("left")
 	)
@@ -388,6 +394,8 @@ func put_hand_to(hand : String,destination : Vector3, rot : Vector3 = Vector3(0,
 
 
 func get_forward_acceleration() -> Vector3:
+	if !controls_active:
+		return Vector3()
 	return global_transform.basis.z * (
 		Input.get_action_strength("back") - Input.get_action_strength("front")
 	)

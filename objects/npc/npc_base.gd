@@ -5,6 +5,13 @@ extends CharacterBody3D
 @onready var nav = $NavAgent
 @onready var head
 @onready var mesh = $human_mesh
+@onready var arm_R_ik = $human_mesh/skeletton/GeneralSkeleton/arm_R_ik
+@onready var arm_L_ik = $human_mesh/skeletton/GeneralSkeleton/arm_L_ik
+@onready var leg_R_ik = $human_mesh/skeletton/GeneralSkeleton/leg_R_ik
+@onready var leg_L_ik = $human_mesh/skeletton/GeneralSkeleton/leg_L_ik
+
+
+
 
 @export var speed := 1.5
 var accel := 10.0
@@ -96,3 +103,7 @@ func _on_state_changed(new_state):
 			velocity = Vector3(0,velocity.y,0)
 			$human_mesh/skeletton/GeneralSkeleton/PhysicalBoneSimulator3D.physical_bones_start_simulation()
 			$AudioStreamPlayer3D.play()
+			arm_L_ik.influence = 0
+			arm_R_ik.influence = 0
+			leg_L_ik.influence = 0
+			leg_R_ik.influence = 0

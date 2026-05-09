@@ -145,6 +145,7 @@ shape = SubResource("Resource_pkuep")
 
 [node name="player" parent="." unique_id=1959656469 instance=ExtResource("12_vrs1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.30926, 1.5276302, 1.2049258)
+running_speed = 0.6
 
 [node name="savable_npc" parent="." unique_id=1669410360 instance=ExtResource("14_6ao8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0553067, 0.0159541, -2.56392)
