@@ -97,6 +97,7 @@ enabled=PackedStringArray("res://addons/SunshineVolumetricClouds/plugin.cfg", "r
 [global_group]
 
 interactible="interactible area"
+item=""
 
 [importer_defaults]
 

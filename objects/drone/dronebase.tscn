@@ -10,6 +10,7 @@ data = PackedByteArray("//uUZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAA
 loop = true
 
 [node name="dronebase" type="RigidBody3D" unique_id=680059746 node_paths=PackedStringArray("motor_sound")]
+physics_interpolation_mode = 1
 script = ExtResource("1_eg4ri")
 motor_sound = NodePath("AudioStreamPlayer3D")
 roll_torque = 1.0

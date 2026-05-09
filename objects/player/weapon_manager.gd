@@ -295,7 +295,13 @@ func _update_firecast_and_hands() -> void:
 	firecast.global_position = weapon.muzzle.global_position
 	firecast.global_rotation = weapon.muzzle.global_rotation
 
+	if player.state == player.in_inventory:
+		hand_l.global_position = $"../bagpack_manager/bagpack_component".handpos.global_position
+		hand_l.global_rotation = $"../bagpack_manager/bagpack_component".handpos.global_rotation
+	else:
+		hand_l.global_position = weapon.left_marker.global_position
+		hand_l.global_rotation = weapon.left_marker.global_rotation
+	
 	hand_r.global_position = weapon.right_marker.global_position
 	hand_r.global_rotation = weapon.right_marker.global_rotation
-	hand_l.global_position = weapon.left_marker.global_position
-	hand_l.global_rotation = weapon.left_marker.global_rotation
+	

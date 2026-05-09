@@ -25,7 +25,7 @@ extends CharacterBody3D
 @onready var anim_tree = $human_mesh/AnimationTree
 
 @onready var reticle = $gui/reticle
-@onready var inventory := $inventory
+@onready var inventory := $upperchest/bagpack_manager/bagpack_component
 var inv_arr = []
 
 @onready var popup : Label = $gui/popup
@@ -110,6 +110,12 @@ var state = idle:
 				friction = 0.15
 				var t = get_tree().create_tween()
 				t.tween_property($CollisionShape3D, "scale",Vector3(1,1,1),0.2)
+				inventory.open = false
+				sensitivity_penalty = 1
+			in_inventory:
+				inventory.open = true
+				sensitivity_penalty = 0.25
+				head.look_at(inventory.global_position)
 			sliding:
 				friction = 0.02
 				var t = get_tree().create_tween()
@@ -245,12 +251,6 @@ func _process(delta) -> void:
 	cam.fov = clamp(cam.fov,50,110)
 	
 	match  state:
-		in_inventory:
-			inventory.show()
-			sensitivity_penalty = 0.5
-		idle:
-			inventory.hide()
-			sensitivity_penalty = 1
 		climbing:
 			sensitivity_penalty = 0.3
 		sliding:

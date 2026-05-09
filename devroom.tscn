@@ -17,68 +17,69 @@
 [ext_resource type="PackedScene" uid="uid://bx4aokus7dh6k" path="res://objects/vehicles/utv/utv.tscn" id="15_6yej1"]
 [ext_resource type="PackedScene" uid="uid://0dqiwflscmkb" path="res://objects/underground_map/underground_map.tscn" id="16_6ahi5"]
 [ext_resource type="PackedScene" uid="uid://jskqhvcwxm8o" path="res://objects/npc/npc_base.tscn" id="17_mnk5i"]
+[ext_resource type="PackedScene" uid="uid://coh8qyjs8w17g" path="res://objects/items/medical/ledx/ledx.tscn" id="18_pkuep"]
 
-[sub_resource type="Resource" id="Resource_mnk5i"]
+[sub_resource type="Resource" id="Resource_yu8y2"]
 script = ExtResource("5_6yej1")
 amount = 25
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_yu8y2"]
+[sub_resource type="Resource" id="Resource_n63tm"]
 script = ExtResource("6_6ahi5")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 360, 5)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_n63tm"]
+[sub_resource type="Resource" id="Resource_prd3t"]
 script = ExtResource("7_mnk5i")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_prd3t"]
+[sub_resource type="Resource" id="Resource_bl2ss"]
 script = ExtResource("8_pkuep")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_bl2ss"]
+[sub_resource type="Resource" id="Resource_lj5g0"]
 script = ExtResource("3_rkmgv")
-stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_mnk5i"), SubResource("Resource_yu8y2"), SubResource("Resource_n63tm"), SubResource("Resource_prd3t")])
+stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_yu8y2"), SubResource("Resource_n63tm"), SubResource("Resource_prd3t"), SubResource("Resource_bl2ss")])
 
 [sub_resource type="Resource" id="Resource_8kcwb"]
 script = ExtResource("11_prd3t")
 size = Vector3(100.982, 1, 1)
 metadata/_custom_type_script = "uid://jgtv3sdg2k5h"
 
-[sub_resource type="Resource" id="Resource_lj5g0"]
+[sub_resource type="Resource" id="Resource_vtyfu"]
 script = ExtResource("5_6yej1")
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_vtyfu"]
+[sub_resource type="Resource" id="Resource_4pmr0"]
 script = ExtResource("6_6ahi5")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 360, 5)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_4pmr0"]
+[sub_resource type="Resource" id="Resource_wx4dc"]
 script = ExtResource("7_mnk5i")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_wx4dc"]
+[sub_resource type="Resource" id="Resource_f1gnp"]
 script = ExtResource("8_pkuep")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_f1gnp"]
+[sub_resource type="Resource" id="Resource_rogvq"]
 script = ExtResource("3_rkmgv")
-stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_lj5g0"), SubResource("Resource_vtyfu"), SubResource("Resource_4pmr0"), SubResource("Resource_wx4dc")])
+stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_vtyfu"), SubResource("Resource_4pmr0"), SubResource("Resource_wx4dc"), SubResource("Resource_f1gnp")])
 
 [sub_resource type="Resource" id="Resource_pkuep"]
 script = ExtResource("11_prd3t")
@@ -111,7 +112,7 @@ directional_shadow_max_distance = 656.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42.6446)
 script = ExtResource("2_vrs1n")
 render_mode = 1
-modifier_stack = SubResource("Resource_bl2ss")
+modifier_stack = SubResource("Resource_lj5g0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://vffrdrgg3uqo"
@@ -129,7 +130,7 @@ shape = SubResource("Resource_8kcwb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.386)
 script = ExtResource("2_vrs1n")
 render_mode = 1
-modifier_stack = SubResource("Resource_f1gnp")
+modifier_stack = SubResource("Resource_rogvq")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://vffrdrgg3uqo"
@@ -229,5 +230,8 @@ size = Vector3(1, 4.58356, 7.72949)
 [node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D/floor" unique_id=1758647610]
 transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, -17.9682, 5.41406, -1.46101)
 size = Vector3(1, 4.15778, 7.72949)
+
+[node name="ledx" parent="." unique_id=279825913 instance=ExtResource("18_pkuep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94610107, 0.00032194325, -4.503433)
 
 [editable path="underground_map"]
