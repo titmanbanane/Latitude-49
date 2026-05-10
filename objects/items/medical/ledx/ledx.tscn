@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bl4fysr353c1b" path="res://meshes/items/medical/ledx/ledx_item_barter_medical_transilluminator_d.png.png" id="1_bxffn"]
 [ext_resource type="Script" uid="uid://ddn65chbfbqrn" path="res://objects/items/item_base/item.gd" id="1_yh27j"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0e0ja"]
+size = Vector3(0.06291199, 0.024536133, 0.09875488)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yh27j"]
 albedo_texture = ExtResource("1_bxffn")
 
@@ -45,19 +48,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hdhhl")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0e0ja"]
-size = Vector3(0.06291199, 0.024536133, 0.09875488)
-
 [node name="ledx" type="RigidBody3D" unique_id=279825913 groups=["item"]]
 continuous_cd = true
 script = ExtResource("1_yh27j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2040286759]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.2888184e-05, 0.05387176, 0.00067138625)
+shape = SubResource("BoxShape3D_0e0ja")
 
 [node name="medical_transilluminator" type="MeshInstance3D" parent="." unique_id=972712100]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.0407492, 0.012451172)
 material_override = SubResource("StandardMaterial3D_yh27j")
 mesh = SubResource("ArrayMesh_mktfg")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2040286759]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.2888184e-05, 0.05387176, 0.00067138625)
-shape = SubResource("BoxShape3D_0e0ja")

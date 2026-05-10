@@ -18,68 +18,69 @@
 [ext_resource type="PackedScene" uid="uid://0dqiwflscmkb" path="res://objects/underground_map/underground_map.tscn" id="16_6ahi5"]
 [ext_resource type="PackedScene" uid="uid://jskqhvcwxm8o" path="res://objects/npc/npc_base.tscn" id="17_mnk5i"]
 [ext_resource type="PackedScene" uid="uid://coh8qyjs8w17g" path="res://objects/items/medical/ledx/ledx.tscn" id="18_pkuep"]
+[ext_resource type="PackedScene" uid="uid://bkd01rtlwa4xl" path="res://objects/bagpack/bagpack_component.tscn" id="19_yu8y2"]
 
-[sub_resource type="Resource" id="Resource_yu8y2"]
+[sub_resource type="Resource" id="Resource_n63tm"]
 script = ExtResource("5_6yej1")
 amount = 25
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_n63tm"]
+[sub_resource type="Resource" id="Resource_prd3t"]
 script = ExtResource("6_6ahi5")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 360, 5)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_prd3t"]
+[sub_resource type="Resource" id="Resource_bl2ss"]
 script = ExtResource("7_mnk5i")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_bl2ss"]
+[sub_resource type="Resource" id="Resource_lj5g0"]
 script = ExtResource("8_pkuep")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_lj5g0"]
+[sub_resource type="Resource" id="Resource_vtyfu"]
 script = ExtResource("3_rkmgv")
-stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_yu8y2"), SubResource("Resource_n63tm"), SubResource("Resource_prd3t"), SubResource("Resource_bl2ss")])
+stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_n63tm"), SubResource("Resource_prd3t"), SubResource("Resource_bl2ss"), SubResource("Resource_lj5g0")])
 
 [sub_resource type="Resource" id="Resource_8kcwb"]
 script = ExtResource("11_prd3t")
 size = Vector3(100.982, 1, 1)
 metadata/_custom_type_script = "uid://jgtv3sdg2k5h"
 
-[sub_resource type="Resource" id="Resource_vtyfu"]
+[sub_resource type="Resource" id="Resource_4pmr0"]
 script = ExtResource("5_6yej1")
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_4pmr0"]
+[sub_resource type="Resource" id="Resource_wx4dc"]
 script = ExtResource("6_6ahi5")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 360, 5)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_wx4dc"]
+[sub_resource type="Resource" id="Resource_f1gnp"]
 script = ExtResource("7_mnk5i")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_f1gnp"]
+[sub_resource type="Resource" id="Resource_rogvq"]
 script = ExtResource("8_pkuep")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_rogvq"]
+[sub_resource type="Resource" id="Resource_xpo68"]
 script = ExtResource("3_rkmgv")
-stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_vtyfu"), SubResource("Resource_4pmr0"), SubResource("Resource_wx4dc"), SubResource("Resource_f1gnp")])
+stack = Array[ExtResource("4_6ao8i")]([SubResource("Resource_4pmr0"), SubResource("Resource_wx4dc"), SubResource("Resource_f1gnp"), SubResource("Resource_rogvq")])
 
 [sub_resource type="Resource" id="Resource_pkuep"]
 script = ExtResource("11_prd3t")
@@ -112,7 +113,7 @@ directional_shadow_max_distance = 656.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42.6446)
 script = ExtResource("2_vrs1n")
 render_mode = 1
-modifier_stack = SubResource("Resource_lj5g0")
+modifier_stack = SubResource("Resource_vtyfu")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://vffrdrgg3uqo"
@@ -130,7 +131,7 @@ shape = SubResource("Resource_8kcwb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.386)
 script = ExtResource("2_vrs1n")
 render_mode = 1
-modifier_stack = SubResource("Resource_rogvq")
+modifier_stack = SubResource("Resource_xpo68")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://vffrdrgg3uqo"
@@ -232,6 +233,22 @@ transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.3
 size = Vector3(1, 4.15778, 7.72949)
 
 [node name="ledx" parent="." unique_id=279825913 instance=ExtResource("18_pkuep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94610107, 0.004177537, -4.503433)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.347889, 0.004177537, -0.9530802)
+
+[node name="ledx2" parent="." unique_id=1521613585 instance=ExtResource("18_pkuep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.647945, 0.004177537, -0.9530802)
+
+[node name="ledx3" parent="." unique_id=972211868 instance=ExtResource("18_pkuep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.06369, 0.004177537, -0.9530802)
+
+[node name="ledx4" parent="." unique_id=1117730149 instance=ExtResource("18_pkuep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.344288, 0.004177537, -0.9530802)
+
+[node name="ledx5" parent="." unique_id=646341070 instance=ExtResource("18_pkuep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.644535, 0.004177537, -0.9530802)
+
+[node name="bagpack_component" parent="." unique_id=1672416522 instance=ExtResource("19_yu8y2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 33.39194, 1.2524903, -1.324877)
+open = true
 
 [editable path="underground_map"]
