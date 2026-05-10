@@ -294,8 +294,8 @@ func _set_cam_rotation(t: float) -> void:
 func _update_firecast_and_hands() -> void:
 	firecast.global_position = weapon.muzzle.global_position
 	firecast.global_rotation = weapon.muzzle.global_rotation
-
-	if player.state == player.in_inventory:
+	
+	if !is_editor and player.state == player.in_inventory:
 		hand_l.global_position = $"../bagpack_manager/bagpack_component".handpos.global_position
 		hand_l.global_rotation = $"../bagpack_manager/bagpack_component".handpos.global_rotation
 	else:

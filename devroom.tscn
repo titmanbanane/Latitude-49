@@ -232,6 +232,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.3
 size = Vector3(1, 4.15778, 7.72949)
 
 [node name="ledx" parent="." unique_id=279825913 instance=ExtResource("18_pkuep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94610107, 0.00032194325, -4.503433)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94610107, 0.004177537, -4.503433)
 
 [editable path="underground_map"]

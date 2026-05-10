@@ -295,13 +295,6 @@ func _physics_process(delta) -> void:
 		elif  (is_on_floor() or floorcast.is_colliding()) and !Input.is_action_pressed("jump"):
 			velocity.y = 0
 	
-	
-	#if h_velocity.length() >0.5:
-		#anim.play("walk")
-		#var target_speed = h_velocity.length() * 0.2
-		#anim.speed_scale = lerp(anim.speed_scale,target_speed * (0.5 + (0.5 * int(state != aiming))),delta * 15.0)
-	#else:
-		#anim.play("RESET")
 	move_and_slide()
 	collide_with_physics_bodies()
 

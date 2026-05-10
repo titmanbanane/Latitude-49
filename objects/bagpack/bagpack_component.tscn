@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7mwaliyhwg42" path="res://meshes/items/equipement/daypack/daypack_item_equipment_backpack_daypack_g.png.png" id="3_onv7o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s8lpi"]
-size = Vector3(0.26104736, 0.4498291, 0.14916992)
+size = Vector3(0.26104736, 0.4498291, 0.011108398)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idi1u"]
 resource_name = "backpack_passthrough"
@@ -16,21 +16,20 @@ albedo_texture = ExtResource("3_onv7o")
 script = ExtResource("1_idi1u")
 light = NodePath("inventory_light")
 handpos = NodePath("handmarker")
-open = true
 
 [node name="bag_area" type="Area3D" parent="." unique_id=370620769 groups=["bagpack_area"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bag_area" unique_id=1006771749]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011901855, -0.059265137, -0.18444824)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011901855, -0.059265137, -0.11541748)
 shape = SubResource("BoxShape3D_s8lpi")
 
 [node name="inventory_light" type="SpotLight3D" parent="." unique_id=1940979792]
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, -0.025212497, -0.3782009)
+visible = false
 spot_range = 0.43509012
 spot_angle = 69.61432
 
 [node name="BP_daypack" parent="." unique_id=1878253005 instance=ExtResource("2_uyqvd")]
-blend_shapes/open = 1.0
 surface_material_override/1 = SubResource("StandardMaterial3D_idi1u")
 
 [node name="handmarker" type="Marker3D" parent="." unique_id=436437504]

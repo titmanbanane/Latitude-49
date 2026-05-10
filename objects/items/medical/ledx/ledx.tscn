@@ -49,13 +49,15 @@ shadow_mesh = SubResource("ArrayMesh_hdhhl")
 size = Vector3(0.06291199, 0.024536133, 0.09875488)
 
 [node name="ledx" type="RigidBody3D" unique_id=279825913 groups=["item"]]
+continuous_cd = true
 script = ExtResource("1_yh27j")
 
 [node name="medical_transilluminator" type="MeshInstance3D" parent="." unique_id=972712100]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.0407492, 0.012451172)
 material_override = SubResource("StandardMaterial3D_yh27j")
 mesh = SubResource("ArrayMesh_mktfg")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2040286759]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2888184e-05, 0.011779785, 0.013122559)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.2888184e-05, 0.05387176, 0.00067138625)
 shape = SubResource("BoxShape3D_0e0ja")
