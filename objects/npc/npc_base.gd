@@ -58,8 +58,24 @@ var look_dir := Vector2()
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
+	_setup_npc_sync()
+
+func _setup_npc_sync() -> void:
+	if not NetworkManager.is_online():
+		return
+	var sync := MultiplayerSynchronizer.new()
+	sync.name = "_npc_sync"
+	var cfg  := SceneReplicationConfig.new()
+	cfg.add_property(NodePath(":global_position"))
+	cfg.add_property(NodePath(":rotation"))
+	cfg.add_property(NodePath(":state"))
+	sync.replication_config = cfg
+	add_child(sync)
 
 func _process(_delta):
+	# NPC AI runs only on the server in multiplayer.
+	if NetworkManager.is_online() and not NetworkManager.is_server():
+		return
 	match state:
 		idle, dead:
 			velocity = Vector3(0,velocity.y,0)
@@ -69,6 +85,9 @@ func _process(_delta):
 			update_target_location(player.global_position + (-player.global_transform.basis.z.normalized() * 1))
 
 func _physics_process(delta):
+	# NPC physics driven by server only in multiplayer.
+	if NetworkManager.is_online() and not NetworkManager.is_server():
+		return
 	var direction = Vector3()
 	
 	direction = nav.get_next_path_position() - global_position
@@ -87,6 +106,13 @@ func _physics_process(delta):
 func health_check():
 	if health["head"] <= 0 or health["torso"] <= 0:
 		state = dead
+
+## Called by GameManager.relay_npc_damage() on the server.
+func take_damage_server(bone_group: String, amount: int) -> void:
+	if not NetworkManager.is_server() and NetworkManager.is_online():
+		return
+	health[bone_group] -= amount
+	health_check()
 
 func update_target_location(target_move):
 	nav.target_position = target_move

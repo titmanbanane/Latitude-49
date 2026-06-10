@@ -1,5 +1,16 @@
 extends CharacterBody3D
 
+## Synced to all peers via MultiplayerSynchronizer so remote clients
+## can render the correct vertical aim angle on this player's head.
+var _net_head_pitch : float = 0.0
+## Synced weapon stance (0-4) so remote peers show the correct weapon position.
+var _net_stance     : int   = 0
+## Synced aiming flag so remote peers show/hide the weapon dot correctly.
+var _net_is_aiming  : bool  = false
+
+## True once activate_local_player() has been called (or in offline mode).
+var _is_local_player : bool = false
+
 @onready var head_path = $BoneAttachment3D/head_path
 @onready var head = $head
 @onready var cam : Camera3D = $head/camera_rotation/Camera3D
@@ -124,12 +135,70 @@ var state = idle:
 
 func _ready() -> void:
 	health_check()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$human_mesh.top_level = true
 	for ik in get_tree().get_nodes_in_group("ik"):
 		ik.start()
+	_setup_multiplayer_sync()
+	# In offline mode (no network peer) every node is its own authority.
+	if not NetworkManager.is_online():
+		activate_local_player()
+	else:
+		# Hide GUI for all spawned instances; activate_local_player() un-hides
+		# it only for the peer that owns this player.
+		$gui.hide()
+
+## Called by GameManager after spawning the player that belongs to this client.
+func activate_local_player() -> void:
+	_is_local_player = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	cam.current = true
+	$gui.show()
+	# Tell Terrain3D to generate collision around this client's camera.
+	# Without this call the terrain has no camera reference and generates
+	# no collision meshes, so all players fall through the ground.
+	_register_camera_with_terrain(cam)
+
+func _register_camera_with_terrain(camera: Camera3D) -> void:
+	# Terrain3D can be anywhere in the tree; find it by class name.
+	for node in get_tree().get_nodes_in_group("terrain3d"):
+		if node.has_method("set_camera"):
+			node.set_camera(camera)
+			return
+	# Fallback: search the whole tree (slower, only runs once on spawn).
+	var terrain := _find_terrain3d(get_tree().root)
+	if terrain:
+		terrain.set_camera(camera)
+
+func _find_terrain3d(node: Node) -> Node:
+	if node.get_class() == "Terrain3D":
+		return node
+	for child in node.get_children():
+		var result := _find_terrain3d(child)
+		if result:
+			return result
+	return null
+
+func _setup_multiplayer_sync() -> void:
+	var sync := MultiplayerSynchronizer.new()
+	sync.name = "_net_sync"
+	var cfg  := SceneReplicationConfig.new()
+	# Position and full rotation let remote peers render the character correctly.
+	cfg.add_property(NodePath(":position"))
+	cfg.add_property(NodePath(":rotation"))
+	# velocity drives the locomotion animation blend on remote peers.
+	cfg.add_property(NodePath(":velocity"))
+	# Head pitch, weapon stance, and aiming state for remote visual fidelity.
+	cfg.add_property(NodePath(":_net_head_pitch"))
+	cfg.add_property(NodePath(":_net_stance"))
+	cfg.add_property(NodePath(":_net_is_aiming"))
+	sync.replication_config = cfg
+	# Explicitly set authority so the sync node doesn't rely on propagation timing.
+	sync.set_multiplayer_authority(get_multiplayer_authority())
+	add_child(sync)
 
 func _input(event) -> void:
+	if not _is_local_player:
+		return
 	if !controls_active:
 		return
 	
@@ -148,11 +217,7 @@ func _input(event) -> void:
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-60), deg_to_rad(85))
 			head.rotation.z = clamp(head.rotation.z,0,0)
 			head.rotation.y = clamp(head.rotation.y,0,0)
-			
-			mouse_vector = -event.relative  * (int(head.rotation.x >= deg_to_rad(-74) and head.rotation.x <= deg_to_rad(84)))
-	
-	
-	if Input.is_action_just_pressed("lean"):
+		_net_head_pitch = head.rotation.x
 		var t = get_tree().create_tween()
 		t.tween_property(self, "lean_progress",0.5,0.2)
 		await t.finished
@@ -188,20 +253,32 @@ func _input(event) -> void:
 			i.interact()
 
 func _process(delta) -> void:
-	if intercast.is_colliding() and intercast.get_collider().is_in_group("interactible"):
-		reticle.show()
-	else :
-		reticle.hide()
-	
+	# --- Runs for ALL players (local and remote) ---
+	# human_mesh has top_level=true so it must be repositioned manually every frame.
 	$human_mesh.global_position = global_position
 	if Vector2(velocity.x, velocity.z).length() < 0.1:
 		if abs(($human_mesh.global_rotation.y - global_rotation.y)) > deg_to_rad(30):
 			$human_mesh.global_rotation.y = lerp_angle($human_mesh.global_rotation.y,  global_rotation.y, delta * 3 * abs($human_mesh.global_rotation.y - global_rotation.y))
 	else :
 		$human_mesh.global_rotation.y = global_rotation.y
-	
+
 	var walking_space_vector : Vector2 = Vector2(velocity.x, velocity.z).rotated(global_rotation.y)*0.1
 	anim_tree.set("parameters/locomotion/blend_position", walking_space_vector*1.25)
+
+	# --- Remote players: apply synced values then stop here ---
+	if not _is_local_player:
+		head.rotation.x = _net_head_pitch
+		# Fight stance blending — remote players are never in the pause-menu
+		# punch-mode, so always use the default blend.
+		anim_tree.set("parameters/fightstance/blend_amount", 1)
+		return
+
+	# --- Local player only below ---
+	if intercast.is_colliding() and intercast.get_collider().is_in_group("interactible"):
+		reticle.show()
+	else :
+		reticle.hide()
+
 	if Input.is_action_pressed("ui_cancel"):
 		anim_tree.set("parameters/fightstance/blend_amount", clamp(abs(walking_space_vector.length()*3), 0, 1))
 		anim_tree.tree_root.get_node("fightstance").filter_enabled = true
@@ -211,13 +288,7 @@ func _process(delta) -> void:
 		anim_tree.set("parameters/fightstance/blend_amount", 1)
 		anim_tree.tree_root.get_node("fightstance").filter_enabled = false
 	
-	for i in stats:
-		match i:
-			"health":
-				stats[i] = clamp(stats[i],-100,100)
-				if stats[i] <= 0:
-					die()
-	
+
 	if reach.is_colliding():
 		if reach.get_collider().is_in_group("interactible"):
 			popup.show()
@@ -230,7 +301,7 @@ func _process(delta) -> void:
 		elif popup.visible:
 			popup.hide()
 	
-	mouse_direction = lerp(mouse_direction, mouse_vector, 10 * get_process_delta_time())
+	mouse_direction = lerp(mouse_direction, mouse_vector, 10.0 * delta)
 	
 	
 	$gui/fps_label.text = "fps: " + str(Performance.get_monitor(Performance.TIME_FPS))
@@ -266,7 +337,9 @@ func _process(delta) -> void:
 
 
 func _physics_process(delta) -> void:
-	
+	if not _is_local_player:
+		return
+
 	var input := get_forward_acceleration() + get_side_acceleration()
 	
 	if state != climbing:
@@ -404,6 +477,19 @@ func get_right_stick() -> Vector2:
 func _on_resume_button_down():
 	get_tree().paused = false
 	pause_menu.hide()
+
+## Called when this player fires and hits something in online mode.
+## Sends the hit information to the server for authoritative damage application.
+func relay_hit_to_server(hit_node: Node, hit_pos: Vector3) -> void:
+	if hit_node.get_class() == "PhysicalBone3D":
+		var bone   : Node = hit_node
+		var npc    := bone.get_parent().get_parent().get_parent().get_parent().get_parent()
+		var group  := "head" if bone.is_in_group("head") else "torso"
+		var amount := 30
+		GameManager.relay_npc_damage.rpc_id(1, npc.get_path(), group, amount)
+	elif hit_node is CharacterBody3D and hit_node.is_in_group("player"):
+		var target_id := int(hit_node.name)
+		GameManager.relay_player_damage.rpc_id(1, target_id, "torso", 20)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 

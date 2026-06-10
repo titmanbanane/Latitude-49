@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b7vr7nwjd6nny"]
+
+[ext_resource type="Script" uid="uid://bowkwcilnosem" path="res://objects/weapons/modular_rifle.gd" id="1_6eexy"]
+[ext_resource type="PackedScene" uid="uid://hxnord7dqg54" path="res://objects/weapons/rifles/akm/weapon_izhmash_akmsn_762x39_model/weapon_izhmash_akmsn_762x39_model.fbx" id="2_fxn5m"]
+[ext_resource type="PackedScene" uid="uid://dnrk0n1bnb22w" path="res://objects/weapons/mods/handguards (bones)/handguard_ak_izhmash_ak100_rail_plastic/handguard_ak_izhmash_ak100_rail_plastic.fbx" id="2_pjf0l"]
+[ext_resource type="Script" uid="uid://dgg0qo0jiia8x" path="res://objects/weapons/rifle_config.gd" id="3_pjf0l"]
+
+[sub_resource type="Resource" id="Resource_8asyn"]
+script = ExtResource("3_pjf0l")
+reciever = ExtResource("2_fxn5m")
+handguard = ExtResource("2_pjf0l")
+
+[node name="Node3D" type="Node3D" unique_id=1533652404]
+script = ExtResource("1_6eexy")
+config = SubResource("Resource_8asyn")

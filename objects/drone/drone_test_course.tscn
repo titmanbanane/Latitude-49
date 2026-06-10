@@ -303,6 +303,7 @@ directional_shadow_max_distance = 656.9
 
 [node name="dronebase" parent="." unique_id=680059746 instance=ExtResource("7_r5ghu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.751533, 0)
+continuous_cd = true
 max_thrust = 42.0
 hover_thrust_ratio = 0.24
 roll_torque = 0.05
